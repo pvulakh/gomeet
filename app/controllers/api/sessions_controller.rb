@@ -6,6 +6,7 @@ class Api::SessionsController < ApplicationController
             render 'api/users/show';
         else  
             render json: ["Your email or password was entered incorrectly."], status: 401
+        end
     end 
 
     def destroy
