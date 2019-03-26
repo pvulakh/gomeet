@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'rails_12factor'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -51,6 +52,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-rails'
+  gem 'rails-ujs'
 end
 
 group :test do
