@@ -73,7 +73,7 @@ class LoginForm extends React.Component {
 
                 <h2>Log in</h2>
                 <p>Not registered with us yet?</p>
-                <Link to='/signup'>Sign up</Link>
+                <Link to='/register'>Sign up</Link>
 
                 <form onSubmit={this.verifySubmit}>
 

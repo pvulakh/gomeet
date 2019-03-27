@@ -25,6 +25,20 @@ class SignupForm extends React.Component {
         return re.test(email);
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.errors != this.props.errors) {
+            //debugger
+            const emailTakenError = (
+                <div>
+                    This email is already in use. Would you rather
+                        <Link to='/login'>log in</Link>?
+                    </div>
+            );
+            let newErrorFields = merge({}, this.state.errorFields, { email: emailTakenError });
+            this.setState({ errorFields: newErrorFields });
+        }
+    }
+
     verifySubmit(e) {
         e.preventDefault();
         this.setState({ errorFields: {}}, () => {
@@ -37,7 +51,7 @@ class SignupForm extends React.Component {
                 newErrorFields = merge(newErrorFields, this.state.errorFields, { email: "Can't be empty" });
             } else if (!this.validateEmail(this.state.user.email)) {
                 newErrorFields = merge(newErrorFields, this.state.errorFields, { email: "Doesn't look like an email address" });
-            }
+            } 
 
             if (this.state.user.password === '') {
                 newErrorFields = merge(newErrorFields, this.state.errorFields, { password: "Can't be empty" });
@@ -46,6 +60,7 @@ class SignupForm extends React.Component {
             }
 
             this.setState({ errorFields: newErrorFields});
+            //debugger
             if (Object.values(this.state.errorFields).length === 0) {
                 this.handleSubmit(e);
             }
@@ -58,6 +73,11 @@ class SignupForm extends React.Component {
     }
 
     render() {
+        let errors;
+        if (this.state.errorFields.email && this.state.errorFields.email.length > 35) {
+            errors = "Sorry, there was a problem. You'll find more details highlighted below.";
+        } 
+        
         return (
             <div>
                 <Route
@@ -70,7 +90,7 @@ class SignupForm extends React.Component {
                         }
                     }
                 />
-                <ul>{this.props.errors}</ul>
+                <ul>{errors}</ul>
 
                 <h2>Sign up</h2>
                 <button onClick={this.props.demoUser}>Demo User</button>
@@ -82,7 +102,7 @@ class SignupForm extends React.Component {
 
                     <label>Email address:</label>
                     <input type="text" value={this.state.email} onChange={this.handleChange('email')} />
-                    <p>{this.state.errorFields.email}</p>
+                    <div>{this.state.errorFields.email}</div>
 
                     <label>Password:</label>
                     <input type="password" value={this.state.password} onChange={this.handleChange('password')} />

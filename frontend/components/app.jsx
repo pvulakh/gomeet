@@ -9,7 +9,7 @@ const App = () => (
     <div>
         <NavBarContainer />
         <AuthRoute path='/login' component={LoginFormContainer} />
-        <AuthRoute path='/signup' component={SignupFormContainer} />
+        <AuthRoute path='/register' component={SignupFormContainer} />
          this is the main part of the app 
         <Footer />    
     </div>
