@@ -5,7 +5,9 @@ import LoginForm from './login_form';
 
 const msp = state => {
     return { 
-        user: { email:'', password:'' } 
+        user: { email:'', password:'' },
+        currentUser: state.entities.users[state.session.id],
+        errors: Object.values(state.errors)
     };
 };
 

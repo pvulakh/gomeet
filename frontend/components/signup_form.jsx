@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -20,12 +20,24 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div>
+                <Route
+                    path="/"
+                    render={
+                        () => {
+                            if (this.props.currentUser) {
+                                return < Redirect to="/" />
+                            }
+                        }
+                    }
+                />
+                <ul>{this.props.errors}</ul>
+
                 <h2>Sign up</h2>
                 <button onClick={this.props.demoUser}>Demo User</button>
 
                 <form onSubmit={this.handleSubmit}>
                     <label>Your name:</label>
-                    <input type="text" value={this.state.email} onChange={this.handleChange('name')} />
+                    <input type="text" value={this.state.name} onChange={this.handleChange('name')} />
 
                     <label>Email address:</label>
                     <input type="text" value={this.state.email} onChange={this.handleChange('email')} />

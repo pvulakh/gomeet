@@ -19,7 +19,6 @@ class NavBar extends React.Component {
                 <button onClick={this.props.logout}>Log Out</button>
             </div>);
         }
-        //debugger
         return (
             <div>
                 <p>logo</p>{/* <img src="" alt=""/> */}
