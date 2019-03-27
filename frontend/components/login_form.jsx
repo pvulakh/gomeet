@@ -22,38 +22,32 @@ class LoginForm extends React.Component {
 
     verifySubmit(e) {
         e.preventDefault();
-        if (this.state.user.email === '') {
-            const newEmptyFields = merge({}, this.state.emptyFields, { email: true })
+        this.setState({ emptyFields: {}}, () => {
+            let newEmptyFields = {};
+            if (this.state.user.email === '') {
+                newEmptyFields = merge({}, this.state.emptyFields, { email: "Please enter your email address." });
+            }
+
+            if (this.state.user.password === '') {
+                newEmptyFields = merge(newEmptyFields, this.state.emptyFields, { password: "Please enter your password." });
+            }
+
             this.setState({ emptyFields: newEmptyFields });
-        }
-
-        if (this.state.user.password === '') {
-            const newEmptyFields = merge({}, this.state.emptyFields, { password: true })
-            this.setState({ emptyFields: newEmptyFields});
-        }
-
-        if (!this.state.emptyFields.email && !this.state.emptyFields.password) {
-            this.handleSubmit(e);
-        }
+            if (Object.values(this.state.emptyFields).length === 0) {
+                this.handleSubmit();
+            }
+        });
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
+    handleSubmit() {
         this.props.login(this.state.user);
     }
     
     render() {
-        let emptyEmail;
-        let emptyPassword;
         let emptyError;
         let errors;
 
-        if (this.state.emptyFields.email) {
-            emptyEmail = "Please enter your email address.";
-            emptyError = "Sorry, there was a problem. You'll find more details highlighted below.";
-        }
-        if (this.state.emptyFields.password) {
-            emptyEmail = "Please enter your password.";
+        if (Object.values(this.state.emptyFields).length > 0) {
             emptyError = "Sorry, there was a problem. You'll find more details highlighted below.";
         }
 
@@ -62,7 +56,7 @@ class LoginForm extends React.Component {
         } else {
             errors = this.props.errors;
         }
-
+       
         return (
             <div>
                 <Route
@@ -85,11 +79,11 @@ class LoginForm extends React.Component {
 
                 <label>Email address:</label>
                 <input type="text" value={this.state.user.email} onChange={this.handleChange('email')}/>
-                <p>{emptyEmail}</p>
+                <p>{this.state.emptyFields.email}</p>
 
                 <label>Password:</label>
                 <input type="password" value={this.state.user.password} onChange={this.handleChange('password')}/>
-                <p>{emptyPassword}</p>
+                <p>{this.state.emptyFields.password}</p>
 
                 <input type="submit" value='Log in'/>
                 </form>
