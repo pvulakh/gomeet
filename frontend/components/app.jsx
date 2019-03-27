@@ -1,16 +1,18 @@
 import React from 'react';
-import NavBarContainer from './navbar_container';
+import NavBarContainer from './nav/navbar_container';
+import Splash from './splash';
 import Footer from './footer';
-import LoginFormContainer from './login_form_container';
-import SignupFormContainer from './signup_form_container';
+import LoginFormContainer from './session/login_form_container';
+import SignupFormContainer from './session/signup_form_container';
 import AuthRoute from '../util/route_util';
+import { Route } from 'react-router-dom';
 
 const App = () => (
     <div>
         <NavBarContainer />
         <AuthRoute path='/login' component={LoginFormContainer} />
         <AuthRoute path='/register' component={SignupFormContainer} />
-         this is the main part of the app 
+        <Route exact path='/' component={Splash} />
         <Footer />    
     </div>
 );

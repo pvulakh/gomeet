@@ -12,11 +12,18 @@ const Footer = () => (
 
         <div>
             <h4>Follow us</h4>
-            
-            <link rel="stylesheet" href="https://twitter.com/polinavulakh"/>
-            <link rel="stylesheet" href="https://github.com/pvulakh" />
-            <link rel="stylesheet" href="https://www.linkedin.com/in/polinavulakh/"/>
-            <link rel="stylesheet" href=""/>
+            <a href="https://github.com/pvulakh">
+                <i className="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/polinavulakh/">
+                <i className="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://twitter.com/polinavulakh">
+                <i className="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="#">
+                <i className="fa fa-user-circle" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
 );
