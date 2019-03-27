@@ -7,6 +7,6 @@ export default (state = {}, action) => {
         case RECEIVE_CURRENT_USER:
             return merge({}, state, { [action.currentUser.id]: action.currentUser} );
         default: 
-            return true;
+            return state;
     }
 };
