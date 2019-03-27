@@ -27,7 +27,6 @@ class SignupForm extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.errors != this.props.errors) {
-            //debugger
             const emailTakenError = (
                 <div>
                     This email is already in use. Would you rather
@@ -60,7 +59,6 @@ class SignupForm extends React.Component {
             }
 
             this.setState({ errorFields: newErrorFields});
-            //debugger
             if (Object.values(this.state.errorFields).length === 0) {
                 this.handleSubmit(e);
             }
@@ -96,20 +94,22 @@ class SignupForm extends React.Component {
                 <button onClick={this.props.demoUser}>Demo User</button>
 
                 <form onSubmit={this.verifySubmit}>
-                    <label>Your name:</label>
+                    <label>Your name</label>
                     <input type="text" value={this.state.name} onChange={this.handleChange('name')} />
                     <p>{this.state.errorFields.name}</p>
 
-                    <label>Email address:</label>
+                    <label>Email address</label>
                     <input type="text" value={this.state.email} onChange={this.handleChange('email')} />
                     <div>{this.state.errorFields.email}</div>
 
-                    <label>Password:</label>
+                    <label>Password</label>
                     <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
                     <p>{this.state.errorFields.password}</p>
 
                     <p>Location element</p>
+                    <p>Your name is public. We'll use your email address to send you updates, and your location to find GoMeets near you.</p>
                     <input type="submit" value='Continue' />
+                    <p>When you "Continue", you agree to GoMeet's Terms of Service. We will manage information about you as described in our Privacy Policy, and Cookie Policy.</p>
                 </form>
 
                 <p>Already a member? 

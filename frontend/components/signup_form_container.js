@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { signup,  } from '../actions/session_actions';
+import { signup, demoUser  } from '../actions/session_actions';
 import SignupForm from './signup_form';
 
 const msp = state => {
@@ -12,7 +12,8 @@ const msp = state => {
 
 const mdp = dispatch => {
     return {
-        signup: user => dispatch(signup(user))
+        signup: user => dispatch(signup(user)),
+        demoUser: () => dispatch(demoUser())
     };
 };
 

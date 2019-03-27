@@ -25,6 +25,13 @@ export const receiveErrors = errors => {
 };
 
 
+export const demoUser = () => {
+    return login({
+        email: 'demo_user@gomeet.com',
+        password: 'demo_user'
+    });
+};
+
 export const signup = user => dispatch => {
     return SessionAPIUtil.signup(user).then(
         user => dispatch(receiveCurrentUser(user)),
