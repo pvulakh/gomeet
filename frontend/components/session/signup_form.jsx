@@ -89,11 +89,11 @@ class SignupForm extends React.Component {
                     }
                 />
                 <ul>{errors}</ul>
-
+                
                 <h2>Sign up</h2>
                 <button onClick={this.props.demoUser}>Demo User</button>
 
-                <form onSubmit={this.verifySubmit}>
+                <form onSubmit={this.verifySubmit} className='form'>
                     <label>Your name</label>
                     <input type="text" value={this.state.name} onChange={this.handleChange('name')} />
                     <p>{this.state.errorFields.name}</p>
@@ -108,7 +108,7 @@ class SignupForm extends React.Component {
 
                     <p>Location element</p>
                     <p>Your name is public. We'll use your email address to send you updates, and your location to find GoMeets near you.</p>
-                    <input type="submit" value='Continue' />
+                    <input type="submit" value=' Continue ' />
                     <p>When you "Continue", you agree to GoMeet's Terms of Service. We will manage information about you as described in our Privacy Policy, and Cookie Policy.</p>
                 </form>
 

@@ -2,6 +2,7 @@
 @import '../fonts.scss';
 
 .nav-bar {
+    position: relative;
 	display:flex;
 	justify-content: space-between;
 	padding: 20px;

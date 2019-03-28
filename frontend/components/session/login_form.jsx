@@ -71,12 +71,16 @@ class LoginForm extends React.Component {
                 />
                 <p>{errors}</p>
                 
-                <div className='form'>
-                    <h2>Log in</h2>
-                    <p>Not registered with us yet?</p>
-                    <Link to='/register'>Sign up</Link>
+                <div className='form-box'>
+                    <div className='form-top'>
+                        <h2>Log in <img className="icon" src="https://secure.meetupstatic.com/s/img/09300654065624139187/icon/icon_padlock.gif" alt="[lock icon]"></img></h2>
+                        <div className='small'>
+                            <p className='register-text'>Not registered with us yet? 
+                            <Link to='/register' className='form-link'> Sign up</Link></p>
+                        </div>
+                    </div>
 
-                    <form onSubmit={this.verifySubmit}>
+                    <form onSubmit={this.verifySubmit} className='form'>
 
                     <label>Email address:</label>
                     <input type="text" value={this.state.user.email} onChange={this.handleChange('email')}/>
@@ -86,7 +90,7 @@ class LoginForm extends React.Component {
                     <input type="password" value={this.state.user.password} onChange={this.handleChange('password')}/>
                     <p>{this.state.emptyFields.password}</p>
 
-                    <input type="submit" value='Log in'/>
+                    <input type="submit" value=' Log in ' id='button'/>
                     </form>
                 </div>
             </div>

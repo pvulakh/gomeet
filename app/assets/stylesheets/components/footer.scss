@@ -25,7 +25,8 @@
 
 .footer > div {
     position: relative;
-    left: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .create-group {
@@ -62,4 +63,8 @@ h4 {
     margin: 0px 0px 20px;
 }
 
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+}
 

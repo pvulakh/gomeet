@@ -1,2 +1,9 @@
 @import '../colors.scss';
 @import '../fonts.scss';
+
+.form {
+    padding: 16px 16px 0px;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
