@@ -6,11 +6,10 @@ class NavBar extends React.Component {
         let authNav;
         if (!this.props.currentUser) {
             authNav = (
-            <div>
-                <Link to='/login'>Log in</Link>
-                <Link to='/register'>Sign up</Link>
-            </div>
-            ); 
+            <>
+                <div className='has-border'><Link to='/login'>Log in</Link></div>
+                <div><Link to='/register'>Sign up</Link></div>
+            </>); 
         } else {
             authNav = (
             <div>
@@ -18,8 +17,18 @@ class NavBar extends React.Component {
                 <button onClick={this.props.logout}>Log Out</button>
             </div>);
         }
+
+        let userAuth;
+        if (this.props.pathname === '/login') {
+            userAuth = 'login';
+        } else if (this.props.pathname === '/register') {
+            userAuth = 'register';
+        } else {
+            userAuth = '';
+        }
+
         return (
-            <div className='nav-bar'>
+            <div className='nav-bar' id={userAuth}>
                 <Link to='/'>logo</Link>
 
                 <div className='right-nav'>

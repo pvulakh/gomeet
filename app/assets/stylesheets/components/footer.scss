@@ -1,2 +1,60 @@
 @import '../colors.scss';
 @import '../fonts.scss';
+
+.footer {
+    color: $white;
+    background-color: $grey-blue;
+    font-family: $sans-serif;
+    padding: 40px 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#register {
+    display: none;
+}
+
+#login {
+    background-color: $darkest-blue;
+}
+
+.footer > div {
+    position: relative;
+    left: 100px;
+}
+
+.create-group {
+    text-decoration: underline;
+    margin: 0px 0px 20px;
+}
+
+.footer-item {
+    display: flex;
+}
+
+.footer-item * {
+    padding: 0px 16px 0px 0px;
+}
+
+.footer-item > div {
+    color: $mid-grey;
+}
+
+.follow {
+    flex-direction: column;
+}
+
+.follow > div {
+    display: flex;
+}
+
+.follow > div * {
+    padding: 0px 20px 0px 0px;
+    color: $mid-grey;
+}
+
+h4 {
+    margin: 0px 0px 20px;
+}
+
+

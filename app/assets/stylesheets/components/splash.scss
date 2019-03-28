@@ -1,26 +1,32 @@
 @import '../colors.scss';
 @import '../fonts.scss';
 
-.splash {
+
+.splash-vid {
+    height: 480px;
     width: 100%;
+    overflow: hidden;
+    position: relative;
+    min-width: 520px;
 }
 
-.splash > video {
-    position: absolute;
+.splash-vid > video {
     width: 100%;
-    //height: 480px;
+    min-height: 480px;
+    -webkit-filter: brightness(-3);
+    filter: brightness(80%);
 }
 
 .vid-text {
-    height: inherit;
+    position: absolute;
+    top: 35%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
     z-index: 1;
-    position: relative;
-    display: flex;
-    flex-direction: column;
     color: $white;
     text-align: center;
-    // align-items: center;
-    justify-content: space-between; 
     font-family: $sans-serif;
 }
 
@@ -45,5 +51,66 @@ h1 {
 }
 
 .splash-text {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    font-family: $sans-serif;
+    color: $bluer-grey;
+}
+
+.gomeet-how {
+    color: $white;
+    background-color: $darkest-blue;
+    text-align: center;
+}
+
+.gomeet-how > h2 {
+    font-size: 32px;
+    font-weight: 550;
+    margin: 20px 0px 0px;
+    padding: 20px 0px;
+}
+
+.gomeet-how > link {
+    font-size: 16px;
+}
+
+.how-items {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 20px;
+    padding: 20px 20px;
+}
+
+.sub-how-item {
+    display: flex;
+    text-align: left;
+    margin: 0px 0px 20px;
+    padding: 0px 0px 0px 20px;
+}
+
+.sub-how-item > div {
+    padding: 0px 0px 0px 20px;
+}
+
+.sub-how-item > div > span {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.sub-how-item > div > p {
+    margin: 0px 0px 20px;
+}
+
+.sub-how-item > div > div {
+    display: flex;
+    color: $bright-blue;
+    font-weight: 550;
+}
+
+.icon-link {
+    padding: 0px 0px 0px 20px;
+}
+
+i {
+    color: $bright-blue;
 }

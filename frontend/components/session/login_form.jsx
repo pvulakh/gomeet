@@ -58,7 +58,7 @@ class LoginForm extends React.Component {
         }
        
         return (
-            <div>
+            <div className='form-page'>
                 <Route
                     path="/"
                     render={
@@ -70,23 +70,25 @@ class LoginForm extends React.Component {
                     }
                 />
                 <p>{errors}</p>
+                
+                <div className='form'>
+                    <h2>Log in</h2>
+                    <p>Not registered with us yet?</p>
+                    <Link to='/register'>Sign up</Link>
 
-                <h2>Log in</h2>
-                <p>Not registered with us yet?</p>
-                <Link to='/register'>Sign up</Link>
+                    <form onSubmit={this.verifySubmit}>
 
-                <form onSubmit={this.verifySubmit}>
+                    <label>Email address:</label>
+                    <input type="text" value={this.state.user.email} onChange={this.handleChange('email')}/>
+                    <p>{this.state.emptyFields.email}</p>
 
-                <label>Email address:</label>
-                <input type="text" value={this.state.user.email} onChange={this.handleChange('email')}/>
-                <p>{this.state.emptyFields.email}</p>
+                    <label>Password:</label>
+                    <input type="password" value={this.state.user.password} onChange={this.handleChange('password')}/>
+                    <p>{this.state.emptyFields.password}</p>
 
-                <label>Password:</label>
-                <input type="password" value={this.state.user.password} onChange={this.handleChange('password')}/>
-                <p>{this.state.emptyFields.password}</p>
-
-                <input type="submit" value='Log in'/>
-                </form>
+                    <input type="submit" value='Log in'/>
+                    </form>
+                </div>
             </div>
         );
     }
