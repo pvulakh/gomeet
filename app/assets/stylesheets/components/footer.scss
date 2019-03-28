@@ -10,12 +10,17 @@
     flex-direction: column;
 }
 
-#register {
+#footer-register {
     display: none;
 }
 
-#login {
+#footer-login {
     background-color: $darkest-blue;
+    min-height: 100vh;
+}
+
+#footer-login > div * {
+    color: $light-grey;
 }
 
 .footer > div {

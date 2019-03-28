@@ -4,7 +4,6 @@ import { logout } from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
-    debugger
     return {
         currentUser: state.entities.users[state.session.id],
         pathname: ownProps.location.pathname
