@@ -3,26 +3,29 @@ import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
     render() {
-        let rightNav;
+        let authNav;
         if (!this.props.currentUser) {
-            rightNav = (
+            authNav = (
             <div>
                 <Link to='/login'>Log in</Link>
                 <Link to='/register'>Sign up</Link>
             </div>
-            );
+            ); 
         } else {
-            rightNav = (
+            authNav = (
             <div>
                 <p>Explore</p>
                 <button onClick={this.props.logout}>Log Out</button>
             </div>);
         }
         return (
-            <div>
-                <p>logo</p>{/* <img src="" alt=""/> */}
-                <Link to='/create'>Start a new group</Link>
-                <div>{rightNav}</div>
+            <div className='nav-bar'>
+                <Link to='/'>logo</Link>
+
+                <div className='right-nav'>
+                    <Link to='/create'>Start a new group</Link>
+                    <div className='auth-nav'>{authNav}</div>
+                </div>
             </div>
         );
     }

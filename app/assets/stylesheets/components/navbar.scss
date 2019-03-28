@@ -1,0 +1,41 @@
+@import '../colors.scss';
+@import '../fonts.scss';
+
+.nav-bar {
+	display:flex;
+	justify-content: space-between;
+	padding: 20px;
+	border-bottom: 1px solid $light-grey;
+}
+
+.right-nav {
+    display: flex;
+    justify-content: space-between;
+    font-family: $sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: $bright-blue;
+    line-height: 23.2px;
+}
+
+.auth-nav {
+    border-left: 1px solid $light-grey;
+}
+
+.auth-nav * {
+    padding: 0 0 0 20px;
+    color: $grey;
+    font-weight: 500;
+}
+
+.auth-nav:first-child:hover {
+    color: $bright-blue;
+}
+
+.auth-nav:nth-child(2):hover {
+    color: $bright-blue;
+}
+
+
+
