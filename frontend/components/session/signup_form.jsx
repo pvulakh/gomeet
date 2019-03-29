@@ -76,7 +76,35 @@ class SignupForm extends React.Component {
         if (this.state.errorFields.email && this.state.errorFields.email.length > 35) {
             errors = "Sorry, there was a problem. You'll find more details highlighted below.";
         } 
+
+        let nameError = (
+            <div className='input-err-signup'>
+                {this.state.errorFields.name}
+            </div>
+        )
+
+        let invalidName;
+        if (nameError) invalidName = 'invalid';
         
+        let emailError = (
+            <div className='input-err-signup'>
+                {this.state.errorFields.email}
+            </div>
+        )
+
+        let invalidEmail;
+        if (emailError) invalidEmail = 'invalid';
+
+        let passwordError = (
+            <div className='input-err-signup'>
+                {this.state.errorFields.password}
+            </div>
+        )
+
+        let invalidPass;
+        if (passwordError) invalidPass = 'invalid';
+
+        //debugger
         return (
             <div className='signup-page'>
                 <Route
@@ -99,20 +127,20 @@ class SignupForm extends React.Component {
                 <form onSubmit={this.verifySubmit} className='signup-form'>
                     <div>
                         <label>Your name</label>
-                        <input type="text" value={this.state.name} onChange={this.handleChange('name')} />
-                        <p>{this.state.errorFields.name}</p>
+                        <input type="text" className={invalidName} value={this.state.name} onChange={this.handleChange('name')} />
+                        {nameError}
                     </div>
 
                     <div>
                         <label>Email address</label>
-                        <input type="text" value={this.state.email} onChange={this.handleChange('email')} />
-                        <div>{this.state.errorFields.email}</div>
+                        <input type="text" className={invalidEmail} value={this.state.email} onChange={this.handleChange('email')} />
+                        {emailError}
                     </div>
 
                     <div>
                         <label>Password</label>
-                        <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
-                        <div>{this.state.errorFields.password}</div>
+                        <input type="password" className={invalidPass} value={this.state.password} onChange={this.handleChange('password')} />
+                        {passwordError}
                     </div>
 
                     <div className='location'>

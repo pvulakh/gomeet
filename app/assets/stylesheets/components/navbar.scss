@@ -9,6 +9,12 @@
 	border-bottom: 1px solid $light-grey;
 }
 
+.logo {
+    font-family: $gomeet;
+    font-size: 34px;
+    color: $bright-red;
+}
+
 .right-nav {
     display: flex;
     justify-content: space-between;
@@ -31,18 +37,20 @@
 .auth-nav {
     display: flex;
     padding: 0px 0px 0px 20px;
+    height: 23.2px;
 }
 
 .auth-nav * {
     padding: 0 0 0 10px;
     color: $grey;
     font-weight: 400;
+    display: flex; 
 }
 
 .auth-nav > .has-border {
     border-left: 1px solid $light-mid-grey;
+    height: 23.2px;
 }
-
 // .link-hover:hover {
 //     color: $bright-blue;
 // }

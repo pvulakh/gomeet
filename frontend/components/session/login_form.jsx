@@ -44,11 +44,32 @@ class LoginForm extends React.Component {
     }
     
     render() {
-        let emptyError;
+        let sorry;
+        let error;
+        let errorMessage;
 
         if (Object.values(this.state.emptyFields).length > 0) {
-            emptyError = "Sorry, there was a problem. You'll find more details highlighted below.";
+           sorry = "Sorry, there was a problem.";
+           error = "You'll find more details highlighted below."; 
+           errorMessage = (
+                <div className='error-msg'>
+                    <div className='sorry'>{sorry}</div>
+                    <div className='error'>{error}</div>
+                </div>
+            );
         }
+
+        let emailError = (
+            <div className='input-err'>
+                {this.state.emptyFields.email}
+            </div>
+        )
+
+        let passwordError = (
+            <div className='input-err'>
+                {this.state.emptyFields.password}
+            </div>
+        )
 
         return (
             <div className='form-page'>
@@ -62,7 +83,7 @@ class LoginForm extends React.Component {
                         }
                     }
                 />
-                <p>{emptyError}</p>
+                <div>{errorMessage}</div>
                 
                 <div className='form-box'>
                     <div className='form-top'>
@@ -77,11 +98,11 @@ class LoginForm extends React.Component {
 
                     <label>Email address:</label>
                     <input type="text" value={this.state.user.email} onChange={this.handleChange('email')}/>
-                    <p>{this.state.emptyFields.email}</p>
+                    {emailError}
 
                     <label>Password:</label>
                     <input type="password" value={this.state.user.password} onChange={this.handleChange('password')}/>
-                    <p>{this.state.emptyFields.password}</p>
+                    {passwordError}
 
                     <input type="submit" value=' Log in ' id='button'/>
                     </form>

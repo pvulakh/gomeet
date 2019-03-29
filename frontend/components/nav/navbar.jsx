@@ -12,10 +12,10 @@ class NavBar extends React.Component {
             </>); 
         } else {
             authNav = (
-            <div>
-                <p>Explore</p>
+            <>
+                <div className='has-border'> Explore</div>
                 <button onClick={this.props.logout}>Log Out</button>
-            </div>);
+            </>);
         }
 
         let userAuth;
@@ -29,7 +29,7 @@ class NavBar extends React.Component {
 
         return (
             <div className='nav-bar' id={userAuth}>
-                <Link to='/'>logo</Link>
+                <Link to='/' className='logo'>GoMeet</Link>
 
                 <div className='right-nav'>
                     <Link to='/create'>Start a new group</Link>
