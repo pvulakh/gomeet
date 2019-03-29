@@ -10,7 +10,7 @@ User.destroy_all
 
 demo_user = User.create!(
     name: 'Demo User',
-    password_digest: BCrypt::Password.create('demo_user'),
+    password: 'demo_user',
     email: 'demo_user@gomeet.com',
     session_token: 'E6kM-Q-Q3dDlnMRKKj-OGQ',
     lat: 42.0,
