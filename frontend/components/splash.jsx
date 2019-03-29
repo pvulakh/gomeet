@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Splash = () => (
-    <div className='splash'>
+const Splash = props => {
+    let hidden;
+    hidden = props.currentUser ? 'hidden' : '';
+
+    return (
+    <div className={`splash ${hidden}`}>
         <div className='splash-vid'>
             <video muted autoPlay loop><source src="https://www.meetup.com/mu_static/en-US/video.dddafbfe.mp4" /></video>
             <div className='vid-text'>
@@ -14,7 +19,7 @@ const Splash = () => (
             </div>
         </div>
         <div className='splash-text'>
-            <h1>EVENTS CAROUSEL FROM MVP #4</h1>
+            {/* <h1>EVENTS CAROUSEL FROM MVP #4</h1> */}
             <div className='gomeet-how'>
                 <h2>How GoMeet Works</h2>
                 <div className='how-items'>
@@ -47,7 +52,12 @@ const Splash = () => (
                 </div>
             </div>
         </div>
-    </div>
-);
+    </div>);
+};
 
-export default Splash;
+const msp = state => {
+    return {
+        currentUser: state.entities.users[state.session.id]
+    }
+}
+export default connect(msp, null)(Splash);

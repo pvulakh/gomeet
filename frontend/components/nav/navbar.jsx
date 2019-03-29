@@ -1,21 +1,57 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DropDown from './dropdown';
 
 class NavBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showDropDown: false
+        };
+
+        this.showDropDown = this.showDropDown.bind(this);
+        this.closeDropDown = this.closeDropDown.bind(this);
+    }
+
+    showDropDown(e) {
+        e.preventDefault();
+        this.setState({ showDropDown: true }, () => {
+            document.addEventListener('click', this.closeDropDown);
+        });
+    }
+
+    closeDropDown(e) {
+        e.preventDefault();
+        this.setState({ showDropDown: false }, () => {
+            document.removeEventListener('click', this.closeDropDown);
+        });
+    }
+
     render() {
+        let dropdown;
+        if (this.state.showDropDown) {
+            const { logout } = this.props;
+            dropdown = <DropDown logout={logout} />;
+        }
+
         let authNav;
         if (!this.props.currentUser) {
             authNav = (
-            <>
-                <div className='has-border'><Link to='/login' className='link-hover'>Log in</Link></div>
-                <div><Link to='/register' className='link-hover'>Sign up</Link></div>
-            </>); 
+                <>
+                    <div className='has-border nav-link'><Link to='/login' className='link-hover'>Log in</Link></div>
+                    <div><Link to='/register' className='link-hover nav-link'>Sign up</Link></div>
+                </>);
         } else {
             authNav = (
-            <>
-                <div className='has-border'> Explore</div>
-                <button onClick={this.props.logout}>Log Out</button>
-            </>);
+                <>
+                    <div className='has-border nav-link'> Explore</div>
+                    <div>
+                        <div className='profile-dd' onClick={this.showDropDown}>
+                            <i className="far fa-user-circle"></i>
+                            <i className="fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                </>);
         }
 
         let userAuth;
@@ -27,6 +63,20 @@ class NavBar extends React.Component {
             userAuth = '';
         }
 
+        // if (dropdown) this.setState({showStatus: false}, () => {
+        //     return (
+        //         <div className='nav-bar' id={userAuth}>
+        //             <Link to='/' className='logo'>GoMeet</Link>
+    
+        //             <div className='right-nav'>
+        //                 <Link to='/create'>Start a new group</Link>
+        //                 <div className='auth-nav'>{authNav}</div>
+        //                 {dropdown}
+        //             </div>
+        //         </div>
+        //     );
+        // })
+
         return (
             <div className='nav-bar' id={userAuth}>
                 <Link to='/' className='logo'>GoMeet</Link>
@@ -34,6 +84,7 @@ class NavBar extends React.Component {
                 <div className='right-nav'>
                     <Link to='/create'>Start a new group</Link>
                     <div className='auth-nav'>{authNav}</div>
+                    {dropdown}
                 </div>
             </div>
         );

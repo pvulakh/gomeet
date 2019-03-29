@@ -5,8 +5,9 @@
     position: relative;
 	display:flex;
 	justify-content: space-between;
-	padding: 20px;
-	border-bottom: 1px solid $light-grey;
+	padding: 16px 16px 8px;
+    border-bottom: 1px solid $light-grey;
+    height: 44px;
 }
 
 .logo {
@@ -48,15 +49,73 @@
     display: flex; 
 }
 
+.profile-dd {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: $mid-grey;
+}
+
+.flag {
+    width: 15px;
+    height: 15px;
+    background-color: $light-grey;
+    border-top: 1px solid $mid-grey;
+    border-left: 1px solid $mid-grey;
+    transform: rotateZ(45deg);
+    position: relative;
+    top: -9px;
+    right: -142px;
+    margin: 0;
+    //display: inline;
+}
+
+.dd {
+    position: absolute;
+    z-index: 1;
+    top: 65px;
+    right: 10px;
+    background-color: $light-grey;
+    border-radius: 3px;
+    border: 1px solid $mid-grey;
+    height: 47px;
+    display: flex;
+    justify-content: center;
+    box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+    //width: 130px;
+}
+
+.dd-comp {
+    width: 130px;
+    margin: 0px 20px;
+    padding: 12px 0px;
+    //padding: 0px 7px 10px;
+    z-index: 2;
+    color: $grey;
+}
+
+.fa-user-circle {
+    font-size: 25px;
+}
+
 .auth-nav > .has-border {
     border-left: 1px solid $light-mid-grey;
     height: 23.2px;
+    color: $bright-blue;
 }
+
+//MAKE LOG IN LINK BLUE ON HOVER LATER 
+
 // .link-hover:hover {
 //     color: $bright-blue;
 // }
 
-.auth-nav > .link-hover:hover {
+.auth-nav > .nav-link {
+    color: $bright-blue;
+}
+
+.nav-link:hover {
+    cursor: pointer;
     color: $bright-blue;
 }
 // .auth-nav:first-child:hover {
