@@ -84,7 +84,7 @@ class SignupForm extends React.Component {
         )
 
         let invalidName;
-        if (nameError) invalidName = 'invalid';
+        if (this.state.errorFields.name) invalidName = 'invalid';
         
         let emailError = (
             <div className='input-err-signup'>
@@ -93,7 +93,7 @@ class SignupForm extends React.Component {
         )
 
         let invalidEmail;
-        if (emailError) invalidEmail = 'invalid';
+        if (this.state.errorFields.email) invalidEmail = 'invalid';
 
         let passwordError = (
             <div className='input-err-signup'>
@@ -102,7 +102,7 @@ class SignupForm extends React.Component {
         )
 
         let invalidPass;
-        if (passwordError) invalidPass = 'invalid';
+        if (this.state.errorFields.password) invalidPass = 'invalid';
 
         //debugger
         return (
