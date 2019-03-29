@@ -108,3 +108,28 @@ div.location {
 .form-link {
     color: $link-blue;
 }
+
+.demo {
+    display: flex;
+    justify-content: center;
+    background-color: $light-blue;
+    //border-bottom: 1px solid $fb-blue;
+    width: 428px;
+    border-radius: 3px;
+    border: 1px solid $light-mid-grey;
+    // border-left: 1px solid $light-mid-grey;
+    // border-right: 1px solid $light-mid-grey;
+    // border-top: 1px solid $light-mid-grey;
+}
+
+.demo-button {
+    background-color: $fb-blue;
+    color: $white;
+    font-size: 18px;
+    font-weight: 550;
+    margin: 16px 0px 16px;
+    padding: 8px;
+    border-radius: 5px;
+    width: 380px;
+    text-align: center;
+}

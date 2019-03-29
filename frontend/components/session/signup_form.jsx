@@ -89,10 +89,12 @@ class SignupForm extends React.Component {
                         }
                     }
                 />
-                <ul>{errors}</ul>
+                <div>{errors}</div>
                 
                 <h2>Sign up</h2>
-                <button onClick={this.props.demoUser}>Demo User</button>
+                <div className='demo'>
+                    <button onClick={this.props.demoUser} className="demo-button">Log in with Demo User</button>
+                </div>
 
                 <form onSubmit={this.verifySubmit} className='signup-form'>
                     <div>

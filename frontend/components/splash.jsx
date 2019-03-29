@@ -14,7 +14,7 @@ const Splash = () => (
             </div>
         </div>
         <div className='splash-text'>
-            <h1>EVENTS CAROUSEL GOES HERE</h1>
+            <h1>EVENTS CAROUSEL FROM MVP #4</h1>
             <div className='gomeet-how'>
                 <h2>How GoMeet Works</h2>
                 <div className='how-items'>
