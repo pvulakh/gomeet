@@ -45,18 +45,11 @@ class LoginForm extends React.Component {
     
     render() {
         let emptyError;
-        let errors;
 
         if (Object.values(this.state.emptyFields).length > 0) {
             emptyError = "Sorry, there was a problem. You'll find more details highlighted below.";
         }
 
-        if (emptyError) {
-            errors = emptyError;
-        } else {
-            errors = this.props.errors;
-        }
-       
         return (
             <div className='form-page'>
                 <Route
@@ -69,14 +62,14 @@ class LoginForm extends React.Component {
                         }
                     }
                 />
-                <p>{errors}</p>
+                <p>{emptyError}</p>
                 
                 <div className='form-box'>
                     <div className='form-top'>
                         <h2>Log in <img className="icon" src="https://secure.meetupstatic.com/s/img/09300654065624139187/icon/icon_padlock.gif" alt="[lock icon]"></img></h2>
                         <div className='small'>
                             <p className='register-text'>Not registered with us yet? 
-                            <Link to='/register' className='form-link'> Sign up</Link></p>
+                            <Link to='/register' className='form-link' onClick={() => this.setState({ emptyFields: {} })}> Sign up</Link></p> 
                         </div>
                     </div>
 

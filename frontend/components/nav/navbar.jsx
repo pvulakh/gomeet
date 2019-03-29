@@ -7,8 +7,8 @@ class NavBar extends React.Component {
         if (!this.props.currentUser) {
             authNav = (
             <>
-                <div className='has-border link-hover'><Link to='/login'>Log in</Link></div>
-                <div className='link-hover'><Link to='/register'>Sign up</Link></div>
+                <div className='has-border'><Link to='/login' className='link-hover'>Log in</Link></div>
+                <div><Link to='/register' className='link-hover'>Sign up</Link></div>
             </>); 
         } else {
             authNav = (

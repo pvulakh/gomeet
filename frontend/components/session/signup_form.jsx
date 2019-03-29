@@ -26,11 +26,12 @@ class SignupForm extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.errors != this.props.errors) {
+        if ((prevProps.errors != this.props.errors) && (this.props.errors[0][0] === "Email has already been taken")) {
+            debugger
             const emailTakenError = (
                 <div>
-                    This email is already in use. Would you rather
-                        <Link to='/login'>log in</Link>?
+                    This email is already in use. Would you rather 
+                        <Link to='/login' className='form-link' onClick={() => this.setState({ emptyFields: {} })}> log in</Link>?
                     </div>
             );
             let newErrorFields = merge({}, this.state.errorFields, { email: emailTakenError });
@@ -59,7 +60,7 @@ class SignupForm extends React.Component {
             }
 
             this.setState({ errorFields: newErrorFields});
-            if (Object.values(this.state.errorFields).length === 0) {
+            if (Object.values(newErrorFields).length === 0) {
                 this.handleSubmit(e);
             }
         });
@@ -109,7 +110,7 @@ class SignupForm extends React.Component {
                     <div>
                         <label>Password</label>
                         <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
-                        <p>{this.state.errorFields.password}</p>
+                        <div>{this.state.errorFields.password}</div>
                     </div>
 
                     <div className='location'>

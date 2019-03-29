@@ -47,7 +47,7 @@
 //     color: $bright-blue;
 // }
 
-.auth-nav > div:hover {
+.auth-nav > .link-hover:hover {
     color: $bright-blue;
 }
 // .auth-nav:first-child:hover {
@@ -66,4 +66,6 @@
 //     border-left: 1px solid $light-mid-grey;
 // }
 
+// .link-hover:link:hover {
 
+// }

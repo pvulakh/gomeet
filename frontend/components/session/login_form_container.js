@@ -14,6 +14,7 @@ const msp = state => {
 const mdp = dispatch => {
     return {
         login: user => dispatch(login(user))
+       // demo//finish
     };
 };
 

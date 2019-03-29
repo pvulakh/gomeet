@@ -24,6 +24,7 @@
     border-bottom: 1px solid $light-mid-grey;
 }
 
+
 .signup-form > div {
     display: flex;
     flex-direction: column;
@@ -101,5 +102,9 @@ div.location {
 }
 
 .link-color {
+    color: $link-blue;
+}
+
+.form-link {
     color: $link-blue;
 }
