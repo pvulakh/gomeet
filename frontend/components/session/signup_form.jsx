@@ -77,7 +77,7 @@ class SignupForm extends React.Component {
         } 
         
         return (
-            <div>
+            <div className='signup-page'>
                 <Route
                     path="/"
                     render={
@@ -93,27 +93,36 @@ class SignupForm extends React.Component {
                 <h2>Sign up</h2>
                 <button onClick={this.props.demoUser}>Demo User</button>
 
-                <form onSubmit={this.verifySubmit} className='form'>
-                    <label>Your name</label>
-                    <input type="text" value={this.state.name} onChange={this.handleChange('name')} />
-                    <p>{this.state.errorFields.name}</p>
+                <form onSubmit={this.verifySubmit} className='signup-form'>
+                    <div>
+                        <label>Your name</label>
+                        <input type="text" value={this.state.name} onChange={this.handleChange('name')} />
+                        <p>{this.state.errorFields.name}</p>
+                    </div>
 
-                    <label>Email address</label>
-                    <input type="text" value={this.state.email} onChange={this.handleChange('email')} />
-                    <div>{this.state.errorFields.email}</div>
+                    <div>
+                        <label>Email address</label>
+                        <input type="text" value={this.state.email} onChange={this.handleChange('email')} />
+                        <div>{this.state.errorFields.email}</div>
+                    </div>
 
-                    <label>Password</label>
-                    <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
-                    <p>{this.state.errorFields.password}</p>
+                    <div>
+                        <label>Password</label>
+                        <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
+                        <p>{this.state.errorFields.password}</p>
+                    </div>
 
-                    <p>Location element</p>
+                    <div className='location'>
+                        <i className="fas fa-map-marker-alt"></i>
+                        <div> New York, NY</div>
+                    </div>
                     <p>Your name is public. We'll use your email address to send you updates, and your location to find GoMeets near you.</p>
-                    <input type="submit" value=' Continue ' />
+                    <input type="submit" value=' Continue ' id='signup-button'/>
                     <p>When you "Continue", you agree to GoMeet's Terms of Service. We will manage information about you as described in our Privacy Policy, and Cookie Policy.</p>
                 </form>
 
                 <p>Already a member? 
-                    <Link to='/login'>Log in.</Link>
+                    <Link to='/login' className='link-color'> Log in.</Link>
                 </p>
             </div>
         );

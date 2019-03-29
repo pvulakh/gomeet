@@ -1,9 +1,105 @@
 @import '../colors.scss';
 @import '../fonts.scss';
 
-.form {
-    padding: 16px 16px 0px;
+.signup-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0px 0px 16px;
+    padding: 24px 16px 8px;
+    border-top: 1px solid $light-mid-grey;
+    font-family: $sans-serif;
+    font-weight: 550;
+    background-color: $white;
+}
+
+.signup-form {
+    margin: 0px 0px 16px;
+    padding: 16px 0px 0px;
     display: flex;
     flex-direction: column;
     font-size: 13px;
+    width: 428px;
+    border-bottom: 1px solid $light-mid-grey;
+}
+
+.signup-form > div {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 16px;
+}
+
+.signup-form > div > label {
+    font-weight: 550;
+    line-height: 18.5px;
+}
+
+.signup-form > div > input {
+    margin: 0px 0px 4px;
+    padding: 8px;
+    border: 1px solid $light-mid-grey;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: $input-white;
+}
+
+.signup-form > div > input:focus {
+    border: 1px solid $link-blue;
+}
+
+h2 {
+    font-size: 28px;
+    margin: 0px 0px 16px;
+}
+
+.location > i {
+    color: $grey;
+    font-size: 16px;
+    margin: 3px 3px;
+}
+
+div.location {
+    display: flex;
+    flex-direction: row;
+    color: $grey;
+    align-items: center;
+    font-size: 13px;
+}
+
+.signup-form > p {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 20.8px;
+}
+
+#signup-button {
+    font-size: 18px;
+    font-weight: 550;
+    margin: 16px 0px 16px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: $darker-bright-red;
+    max-width: 428px;
+    text-align: center;
+    color: $white;
+}
+
+.signup-form > p:first-of-type {
+    color: $grey;
+}
+
+.signup-form > p:last-of-type {
+    color: $black;
+    text-align: center;
+    padding: 0px 0px 24px 0px;
+}
+
+.signup-page > p:last-of-type {
+    font-weight: 200;
+}
+
+.link-color {
+    color: $link-blue;
 }

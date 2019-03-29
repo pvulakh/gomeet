@@ -43,13 +43,27 @@
     border-left: 1px solid $light-mid-grey;
 }
 
-.auth-nav:first-child:hover {
+// .link-hover:hover {
+//     color: $bright-blue;
+// }
+
+.auth-nav > div:hover {
     color: $bright-blue;
 }
+// .auth-nav:first-child:hover {
+//     color: $bright-blue;
+// }
 
-.auth-nav:nth-child(2):hover {
-    color: $bright-blue;
-}
+// .auth-nav:nth-child(2):hover {
+//     color: $bright-blue;
+// }
 
+// .auth-nav > link:hover {
+//     color: $bright-blue;
+// }
+
+// .auth-nav > .has-border:hover {
+//     border-left: 1px solid $light-mid-grey;
+// }
 
 

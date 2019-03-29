@@ -42,7 +42,7 @@ class Footer extends React.Component {
         return (
             <div className='footer' id={userAuth}>
                 <div>
-                    <div className={`footer-top ${footerFlex}`}>
+                   <div className={`footer-top ${footerFlex}`}>
                         <div className='create-group'><Link to='/create'>Start a new group</Link></div>
                         {footerNav}
                     </div>

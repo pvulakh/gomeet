@@ -32,6 +32,8 @@
 .create-group {
     text-decoration: underline;
     margin: 0px 0px 20px;
+    border-bottom: 1px solid $mid-grey;
+    padding: 0px 0px 20px;
 }
 
 .footer-item {
@@ -48,6 +50,8 @@
 
 .follow {
     flex-direction: column;
+    margin: 0px 0px 16px;
+    padding: 16px 0px 0px;
 }
 
 .follow > div {
@@ -66,5 +70,11 @@ h4 {
 .footer-flex {
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid $dark-grey;
 }
 
+.footer-flex > .create-group {
+    text-decoration: none;
+    border-bottom: none;
+    padding: 0;
+}
