@@ -1,0 +1,1 @@
+json.extract! @group, :id, :creator_id, :title, :description, :public, :lat, :lng, :created_at
