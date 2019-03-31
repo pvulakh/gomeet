@@ -44,7 +44,7 @@ class NavBar extends React.Component {
         } else {
             authNav = (
                 <>
-                    <div className='has-border nav-link'> Explore</div>
+                    <div className='has-border nav-link'><Link to='/find/gomeets'>Explore</Link></div>
                     <div>
                         <div className='profile-dd' onClick={this.showDropDown}>
                             <i className="far fa-user-circle"></i>
