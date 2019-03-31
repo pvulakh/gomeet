@@ -1,0 +1,80 @@
+@import '../colors.scss';
+@import '../fonts.scss';
+
+.create-page {
+  font-family: $sans-serif;
+}
+
+.create-form {
+  width: 840px;
+}
+
+.create-msg {
+  height: 251px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  min-width: 640px;
+}
+
+.create-msg > img {
+  width: 100%;
+  min-height: 251px;
+}
+
+.create-text {
+  position: absolute;
+  top: 35%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  z-index: 1;
+  color: $white;
+  text-align: center;
+}
+
+.create-text > h2 {
+  font-size: 34px;
+}
+
+.create-text > h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.create-location {
+  display: flex;
+  border-bottom: 1px solid $light-mid-grey;
+  align-items: space-around;
+}
+
+.create-location > img {
+  width: 80px;
+  height: auto;
+}
+
+.create-step {
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 1.6;
+  color: $light-mid-grey;
+}
+
+.create-loc-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-group-heading {
+  font-size: 28px;
+  color: $black;
+  font-weight: 600;
+}
+
+.city > div {
+  color: $link-blue;
+  font-size: 13px;
+  font-weight: 400;
+}
+
