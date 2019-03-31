@@ -1,7 +1,18 @@
 @import '../colors.scss';
 @import '../fonts.scss';
 
+
+// body {
+//     display: flex;
+//     flex-direction: column;
+// }
+
 .footer {
+    // position: absolute;
+    // bottom: 0;
+    
+    //flex-shrink: 0;
+    
     color: $white;
     background-color: $grey-blue;
     font-family: $sans-serif;

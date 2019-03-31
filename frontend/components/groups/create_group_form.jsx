@@ -41,21 +41,21 @@ class CreateGroupForm extends React.Component {
 
         <form onSubmit={this.handleSubmit} className='create-form'>
           <div className='create-location'>
-            <img src="https://secure.meetupstatic.com/s/img/5771697722992842330638/start_v2/globe.svg"></img>
+            <img className='create-img' src="https://secure.meetupstatic.com/s/img/5771697722992842330638/start_v2/globe.svg"></img>
             <div className='create-loc-text'>
               <div className='create-step'>
                 step 1 of 4
               </div>
               <h5 className='create-group-heading'>What's your new GoMeet Group's hometown?</h5>
               <div className='city'>
-                <input type='text' defaultValue='New York, NY'/>(<div>change location</div>)
+                <input type='text' defaultValue='New York, NY'/><div>(change location)</div>
               </div>
             </div>
           </div>
 
           <div className='create-main'>
-            <img src="https://secure.meetupstatic.com/s/img/545971442246927/start_v2/tag.svg"></img>
-            <div className='create-main-text'></div>
+            <img className='create-img'src="https://secure.meetupstatic.com/s/img/545971442246927/start_v2/tag.svg"></img>
+            <div className='create-main-text'>
               <div className='create-step'>
                 step 2 of 4
               </div>
@@ -68,12 +68,13 @@ class CreateGroupForm extends React.Component {
               </div>
               <h5 className='create-group-heading'>Describe who should join, and what your GoMeet will do.</h5>
               <div className='create-description'>
-                  <input type='text' value={this.state.description} onChange={this.handleChange('description')}/>
+                  <textarea value={this.state.description} onChange={this.handleChange('description')}/>
               </div>
+            </div>
           </div>
           <div className='create-disclaimer'>
-                  <img src="https://secure.meetupstatic.com/s/img/533695931247066883484/start_v2/people.svg"></img>
-            <div className='create-disc-text'></div>
+            <img className='create-img' src="https://secure.meetupstatic.com/s/img/533695931247066883484/start_v2/people.svg"></img>
+            <div className='create-disc-text'>
               <div className='create-step'>
                 step 4 of 4
               </div>
@@ -85,8 +86,9 @@ class CreateGroupForm extends React.Component {
                 <li>Put your members first</li>
               </ul>
               <h6>We review all GoMeets based on our Community Guidelines.</h6>
+              <input type="submit" value="Agree & Continue" className='create-button'/>
+            </div>
           </div>
-          <input type="submit" value="Agree & Continue" className='create-button'/>
         </form>
       </div>
     );

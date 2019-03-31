@@ -3,6 +3,10 @@
 
 .create-page {
   font-family: $sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 100px;
 }
 
 .create-form {
@@ -43,15 +47,18 @@
   font-weight: 400;
 }
 
-.create-location {
+.create-location, .create-main, .create-disclaimer {
   display: flex;
   border-bottom: 1px solid $light-mid-grey;
-  align-items: space-around;
+  align-items: flex-start;
+  padding: 24px 16px 8px;
 }
 
-.create-location > img {
-  width: 80px;
+.create-img {
+  width: 50px;
   height: auto;
+  display: block;
+  padding: 24px 16px 8px;
 }
 
 .create-step {
@@ -61,15 +68,41 @@
   color: $light-mid-grey;
 }
 
-.create-loc-text {
+.create-main-text {
+  margin-right: auto;
+  padding: 24px 16px 8px;
+}
+
+.create-loc-text, .create-disc-text {
   display: flex;
   flex-direction: column;
+  // box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  // max-width: 840px;
+  padding: 24px 16px 8px;
+  width: 100%;
+}
+
+.create-disclaimer {
+  border-bottom: none;
 }
 
 .create-group-heading {
   font-size: 28px;
   color: $black;
   font-weight: 600;
+  margin: 0px 0px;
+}
+
+.city {
+  display: flex;
+  align-items: center;
+}
+
+.city > input {
+  font-size: 28px;
+  width: 170px;
 }
 
 .city > div {
@@ -78,3 +111,58 @@
   font-weight: 400;
 }
 
+.create-title > input {
+  background-color: $input-white;
+  border-radius: 3px;
+  border: 1px solid $light-mid-grey;
+  box-shadow: none;
+  box-sizing: border-box;
+  margin: 0 0 4px;
+  max-width: 100%;
+  padding: 8px;
+  width: 100%;
+}
+
+.create-title > input::placeholder {
+  color: $mid-grey;
+  font-weight: 300;
+}
+
+.create-description > textarea {
+  background-color: $input-white;;
+  border-radius: 3px;
+  border: 1px solid $light-mid-grey;
+  box-shadow: none;
+  box-sizing: border-box;
+  margin: 0 0 4px;
+  max-width: 100%;
+  padding: 8px;
+  width: 100%;
+  min-height: 85px;
+  height: 200px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-inline-start: 40px;
+}
+
+ul.bullets {
+  list-style-position: outside;
+}
+
+h6 {
+  font-size: 16px;
+  margin: 8px;
+}
+
+.create-button {
+  margin: 16px 0px;
+  border-radius: 3px;
+  border: 9px solid $darker-bright-red;
+  background-color: $darker-bright-red;
+  color: $white;
+  font-weight: 600;
+  width: 170px;
+  text-align: center;
+}
