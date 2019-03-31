@@ -1,4 +1,4 @@
-class GroupsController < ApplicationController
+class Api::GroupsController < ApplicationController
   def index
     @groups = Group.all
     render :index
@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
   
   def create
     @group = Group.new(group_params)
-    @group.creator_id = current_user
+    @group.creator_id = current_user.id
     if @group.save
       render :show
     else  
@@ -15,12 +15,12 @@ class GroupsController < ApplicationController
   end 
 
   def show 
-    @group = Group.find_by(params[:id])
+    @group = Group.find(params[:id])
   end 
 
   def update
-    @group = Group.find_by(params[:id])
-    redirect_to api_groups unless @group.creator_id == current_user.id
+    @group = Group.find(params[:id])
+    redirect_to api_groups_url unless @group.creator_id == current_user.id
     if @group.update(group_params)
       render :show
     else  
@@ -29,10 +29,10 @@ class GroupsController < ApplicationController
   end 
 
   def destroy
-    group = Group.find_by(params[:id])
-    redirect_to api_groups unless group.creator_id == current_user.id
-    group.delete
-    redirect_to api_groups
+    group = Group.find(params[:id])
+    group.delete if group.creator_id == current_user.id
+    @groups = Group.all
+    render :index
   end 
 
   private
