@@ -1,0 +1,133 @@
+@import '../colors.scss';
+@import '../fonts.scss';
+
+body {
+  font-family: $sans-serif;
+}
+
+.edit-group-page {
+  padding: 8px 16px 8px 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.update-group-form {
+  width: 992px;
+  border: 1px solid $light-mid-grey;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.update-group-h {
+  text-align: center;
+  font-size: 42px;
+  color: $white;
+  background-color: $bright-red;
+  border-radius: 3px;
+  width: 992px;
+  margin-bottom: 30px;
+}
+
+.update-group-subh {
+  background-color: $input-white;
+  padding: 8px 16px 8px 38px;
+  margin: 0 -24px 16px -23px;
+  overflow: hidden;
+}
+
+.update-group-title, .update-group-description, .update-group-photo {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  margin-bottom: 36px;
+}
+
+.update-group-form > label {
+  font-size: 13px;
+}
+
+.update-group-title > input {
+  background-color: $input-white;
+  border: 1px solid $light-mid-grey;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 4px;
+  line-height: 1.45;
+  width: 536px;
+}
+
+.update-group-description > p {
+  font-size: 13px;
+  color: $mid-grey;
+  font-weight: 300;
+}
+
+.update-group-description > textarea {
+  max-width: 95%;
+  border: 1px solid $light-mid-grey;
+  border-radius: 3px;
+  height: fit-content;
+  min-height: 300px;
+  padding: 4px;
+  resize: none;
+}
+
+.update-group-loc-vals {
+  display: flex;
+}
+
+.update-group-loc-vals > div {
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  padding: 3px 8px 3px 16px;
+}
+
+.update-group-loc-vals > div > span, input {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.update-group-loc-vals > div > input {
+  background-color: $input-white;
+  border: 1px solid $light-mid-grey;
+  border-radius: 3px;
+  width: 96px;
+  padding: 4px;
+}
+
+.update-group-location > p {
+  color: $grey;
+  font-weight: 300;
+  font-size: 13px;
+  padding: 8px 16px;
+}
+
+.update-group-photo > input {
+  border: 1px solid $light-mid-grey;
+  border-radius: 3px;
+  padding: 4px;
+  width: 389px;
+  margin-left: 24px;
+  font-weight: 300;
+  display: flex;
+  align-items: baseline;
+}
+
+.update-button {
+  background-color: $darker-bright-red;
+  color: $white;
+  border-radius: 3px;
+  text-align: center;
+  width: fit-content;
+  padding: 6px 24px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  margin-left: 450px;
+}
+
+.update-group-title > input:focus, .update-group-loc-vals > div > input:focus, .update-group-photo > input:focus {
+  border: 1px solid $link-blue;
+}

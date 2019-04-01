@@ -166,3 +166,11 @@ h6 {
   width: 170px;
   text-align: center;
 }
+
+input:focus {
+  border: 1px solid $link-blue;
+}
+
+.create-description > textarea:focus {
+  border: 1px solid $link-blue;
+}

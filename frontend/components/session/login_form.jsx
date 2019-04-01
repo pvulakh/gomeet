@@ -107,6 +107,9 @@ class LoginForm extends React.Component {
                     <input type="submit" value=' Log in ' id='button'/>
                     </form>
                     <div className='demo-login'>
+                        <div className='or-box'>
+                            <div className='or-word'>or</div>
+                        </div>
                         <button onClick={this.props.demoUser} className="demo-button">Log in with Demo User</button>
                     </div>
                 </div>

@@ -63,20 +63,6 @@ class NavBar extends React.Component {
             userAuth = '';
         }
 
-        // if (dropdown) this.setState({showStatus: false}, () => {
-        //     return (
-        //         <div className='nav-bar' id={userAuth}>
-        //             <Link to='/' className='logo'>GoMeet</Link>
-    
-        //             <div className='right-nav'>
-        //                 <Link to='/create'>Start a new group</Link>
-        //                 <div className='auth-nav'>{authNav}</div>
-        //                 {dropdown}
-        //             </div>
-        //         </div>
-        //     );
-        // })
-
         return (
             <div className='nav-bar' id={userAuth}>
                 <Link to='/' className='logo'>GoMeet</Link>

@@ -124,6 +124,7 @@
 
 
 .demo-login {
+    position: relative;
     display: flex;
     justify-content: center;
     background-color: $light-blue;
@@ -146,4 +147,21 @@
     border-radius: 5px;
     width: 380px;
     text-align: center;
+}
+
+.or-word {
+    position: absolute;
+    left: 46%;
+    bottom: 90%;
+    z-index: 1;
+    font-weight: 700;
+    font-variant: small-caps;
+    text-transform: uppercase;
+    margin-top: -24px;
+    width: 32px;
+    height: 16px;
+    text-align: center;
+    line-height: 14px;
+    background-color: $white;
+    border-radius: 4px;
 }

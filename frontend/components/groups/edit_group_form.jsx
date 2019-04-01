@@ -46,10 +46,10 @@ class EditGroupForm extends React.Component {
             }
           }
         />
-        <h1>{this.state.title}</h1>
+        <h1 className='update-group-h'>{this.state.title}</h1>
         
         <form className='update-group-form'>
-          <h3>About this GoMeet Group</h3>
+          <h3 className='update-group-subh'>About this GoMeet Group</h3>
 
           <div className='update-group-title'>
             <label>GoMeet Group name</label>
@@ -62,7 +62,7 @@ class EditGroupForm extends React.Component {
             <textarea value={this.state.description} onChange={this.handleChange('description')} />
           </div>
 
-          <h3>Where</h3>
+          <h3 className='update-group-subh'>Where</h3>
           <div className='update-group-location'>
             <div className='update-group-loc-vals'>
               <div>
@@ -77,10 +77,10 @@ class EditGroupForm extends React.Component {
             <p>Only city and town changes to your GoMeet are permitted.</p>
           </div>
           
-          <h3>GoMeet group logo</h3>
-          <div>
+          <h3 className='update-group-subh'>GoMeet group logo</h3>
+          <div className='update-group-photo'>
             <label>Upload a new GoMeet photo</label>
-            <input name="groupPhoto" id="groupPhotoFile" type="file" tabIndex="20"></input>
+            <input name="groupPhoto" id="groupPhotoFile" type="file" tabIndex="20" optional='true'></input>
           </div>
           <input type="submit" value='Save' className='update-button'/>
         </form>

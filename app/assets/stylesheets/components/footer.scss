@@ -1,18 +1,13 @@
 @import '../colors.scss';
 @import '../fonts.scss';
 
-
-// body {
-//     display: flex;
-//     flex-direction: column;
-// }
+.app {
+    position: relative;
+}
 
 .footer {
-    // position: absolute;
-    // bottom: 0;
-    
-    //flex-shrink: 0;
-    
+    position: absolute;
+    width: 100%;
     color: $white;
     background-color: $grey-blue;
     font-family: $sans-serif;
@@ -27,7 +22,6 @@
 
 #footer-login {
     background-color: $darkest-blue;
-    min-height: 100vh;
 }
 
 #footer-login > div * {
