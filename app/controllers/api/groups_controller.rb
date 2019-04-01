@@ -20,8 +20,7 @@ class Api::GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    redirect_to api_groups_url unless @group.creator_id == current_user.id
-    if @group.update(group_params)
+    if (@group.creator_id == current_user.id) && @group.update(group_params)
       render :show
     else  
       render json: @group.errors.full_messages, status: 401
@@ -37,6 +36,6 @@ class Api::GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:title, :description, :public, :lat, :lng)
+    params.require(:group).permit(:title, :description, :public, :lat, :lng, :photo)
   end
 end
