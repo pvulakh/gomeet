@@ -1,6 +1,12 @@
 @import '../colors.scss';
 @import '../fonts.scss';
 
+.group-index-your-groups {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .group-index-your-groups > ul > div > img {
   height: 228px;
   width: auto;
@@ -10,7 +16,60 @@
   overflow: hidden;
 }
 
-.group-index-your-groups > ul {
-  display: flex;
-  flex-wrap: wrap;
+.group-index-header {
+  padding: 32px 0 48px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: $teal-blue;
+  color: $white;
+  text-align: center;
 }
+
+.group-index-header > h2 {
+  font-size: 34px;
+  line-height: 1.25;
+}
+
+.group-index-header > div {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  color: $light-teal;
+}
+
+.group-index-your-groups > h4 {
+  width: 818px;
+  text-transform: uppercase;
+  padding-left: 120px;
+  margin: 16px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: 10px;
+  max-width: 976px;
+  padding-bottom: 100px;
+}
+
+.grid-item {
+  position: relative;
+}
+
+.group-title {
+  z-index: 1;
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  color: $white;
+  font-size: 20px;
+  // white-space: nowrap;
+  // overflow: hidden;
+  // white-space: initial;
+}
+
+// .group-title > h3 {
+//   // white-space: nowrap;
+//   // overflow: hidden;
+//   // white-space: initial;
+// }

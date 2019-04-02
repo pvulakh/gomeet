@@ -23,7 +23,7 @@ class GroupIndex extends React.Component {
           </div>
         <div className='group-index-your-groups'>
           <h4>Your groups</h4>
-          <ul>{groups}</ul>
+          <ul className='grid-container'>{groups}</ul>
         </div>
       </div>
     );

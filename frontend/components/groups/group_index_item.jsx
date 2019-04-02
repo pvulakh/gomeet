@@ -7,8 +7,8 @@ const GroupIndexItem = props => {
         photo = <img src={props.group.photo}/>;
     }
     return (
-        <div>
-            <Link to={`/groups/${props.group.id}`}>{props.group.title}</Link>
+        <div className='grid-item'>
+            <Link to={`/groups/${props.group.id}`} className='group-title'><h3>{props.group.title}</h3></Link>
             {photo}
         </div>  
     ); 
