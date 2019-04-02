@@ -21,14 +21,19 @@ class GroupShow extends React.Component {
     let button;
 
     if ((this.props.currentUser) && (this.props.currentUser.id === this.props.group.creator_id)) {
-      button = <Link to={`/groups/${this.props.group.id}/manage`}>Manage</Link>;
+      button = <Link to={`/groups/${this.props.group.id}/manage`} className='group-show-button'>Manage</Link>;
     } else {
-      button = 'Join Group';
+      button = <Link to={'/'} className='group-show-button'>Join this group</Link>;
     }
 
     let photo;
     if (this.props.group && this.props.group.photo) {
       photo = <img src={this.props.group.photo} />
+    }
+
+    let avatar;
+    if (creator && creator.photo) {
+      avatar = <img src={creator.photo} />
     }
 
     return (
@@ -49,21 +54,21 @@ class GroupShow extends React.Component {
             </div>
             <div>
               <i className="fas fa-user-alt"></i>
-              <div>Organized by <p>{creator.name}</p></div>
+              <div>Organized by <div>{ creator.name}</div></div>
             </div>
           </div>
         </div>
+          <div className='group-show-stripe'>
+            <div className='about-events'>
+              <div>About</div>
+              <div>Events</div>
+            </div>
+            <div>
+              <button>{button}</button> 
+            </div>
+          </div>
         <div className='group-show-bottom'>
           <div className='group-show-right'>
-            <div className='group-show-stripe'>
-              <div>
-                <div>About</div>
-                <div>Events</div>
-              </div>
-              <div>
-                <button>{button}</button> 
-              </div>
-            </div>
             <div className='group-show-main'>
               <div className='group-show-description'>
                 <h2>What we're about</h2>
@@ -84,7 +89,7 @@ class GroupShow extends React.Component {
             <div className='group-org'>
               <h3>Organizer</h3>
               <div>
-                <div>org-avatar</div>
+                <div>{avatar}</div>
                 <div>{creator.name}</div>
               </div>
             </div>

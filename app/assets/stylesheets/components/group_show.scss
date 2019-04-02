@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   border-top: 3px solid $light-mid-grey;
+  color: $dark-grey-blue;
 }
 
 .group-show-header {
@@ -17,6 +18,7 @@
   padding-left: 60px;
   padding-right: 60px;
   justify-content: center;
+  font-weight: 400;
 }
 
 .group-show-header > div {
@@ -31,10 +33,16 @@
 
 .group-show-header > div > div {
   display: flex;
+  align-items: center;
 }
 
 .group-show-header > div > div > i {
   color: $grey;
+  padding-right: 7px;
+}
+
+.group-show-header > div > div > div {
+  display: flex;
 }
 
 .group-show-bottom {
@@ -45,14 +53,37 @@
 
 .group-show-stripe {
   display: flex;
-  justify-content: space-between;
-  margin: 16px 16px;
+  margin: 19px 19px;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .group-show-stripe > div {
   display: flex;
   justify-content: space-between;
   font-size: 16px;
+}
+
+.group-show-stripe:first-child {
+  padding-left: 0px;
+}
+
+.about-events {
+  width: 130px;
+}
+
+.group-show-button {
+  border-radius: 4px;
+  border: 1px solid $bright-red;
+  background-color: $bright-red;
+  color: $white;
+  width: fit-content;
+  text-align: center;
+  padding: 5px 32px;
+}
+
+.group-show-bottom {
+  background-color: $light-grey;
 }
 
 .group-show-bottom > div * {
@@ -62,3 +93,26 @@
 .group-show-description {
   max-width: 600px;
 }
+
+.group-show-events-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.group-show-events-header > h3 {
+  padding-left: 0px;
+}
+
+.group-org > div {
+  display: flex;
+  align-items: center;
+}
+
+.group-org > div > div > img {
+  background-color: $white;
+  border-radius: 50%;
+  height: 60px;
+  width: auto;
+  overflow: hidden;
+}
+

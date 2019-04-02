@@ -6,6 +6,10 @@
   width: auto;
 }
 
+.group-index-your-groups > ul > div {
+  overflow: hidden;
+}
+
 .group-index-your-groups > ul {
   display: flex;
   flex-wrap: wrap;
