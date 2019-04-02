@@ -1,0 +1,54 @@
+@import '../colors.scss';
+@import '../fonts.scss';
+
+.group-show-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 3px solid $light-mid-grey;
+}
+
+.group-show-header {
+  display: flex;
+  height: 357px;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid $light-mid-grey;
+}
+
+.group-show-header > div {
+  padding-left: 24px;
+}
+
+.group-show-header > div > img {
+  width: 600px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.group-show-header > div > div {
+  display: flex;
+}
+
+.group-show-header > div > div > i {
+  color: $grey;
+}
+
+.group-show-bottom {
+  display: flex;
+  // justify-content: space-between;
+}
+
+.group-show-stripe {
+  display: flex;
+  justify-content: space-between;
+}
+
+.group-show-stripe > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.group-show-bottom > div * {
+  padding-left: 16px;
+}
