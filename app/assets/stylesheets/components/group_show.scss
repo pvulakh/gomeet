@@ -14,6 +14,9 @@
   width: 100%;
   overflow: hidden;
   border-bottom: 1px solid $light-mid-grey;
+  padding-left: 60px;
+  padding-right: 60px;
+  justify-content: center;
 }
 
 .group-show-header > div {
@@ -36,19 +39,26 @@
 
 .group-show-bottom {
   display: flex;
-  // justify-content: space-between;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .group-show-stripe {
   display: flex;
   justify-content: space-between;
+  margin: 16px 16px;
 }
 
 .group-show-stripe > div {
   display: flex;
   justify-content: space-between;
+  font-size: 16px;
 }
 
 .group-show-bottom > div * {
   padding-left: 16px;
+}
+
+.group-show-description {
+  max-width: 600px;
 }
