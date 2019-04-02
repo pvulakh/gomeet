@@ -2,33 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class GroupShow extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { creator: null };
-  }
-
   componentDidMount() {
     this.props.fetchGroup(this.props.match.params.groupId);
   }
 
   componentDidUpdate(prevProps) {
-    if (Object.values[prevProps.users] != Object.values[this.props.users]){
-      this.props.fetchUser(this.props.group.creator_id);
-      //this.setState({ creator: this.props.users[this.props.group.creator_id]});
+    if (prevProps.group.id != this.props.group.id) {
+      this.props.fetchGroup(this.props.match.params.groupId);
     }
-    //this.setState({ creator: this.props.users[this.props.group.creator_id] });
   }
 
   render() {
-    //debugger
-    if (!this.props.group) {
+    if ((!this.props.group) || (!this.props.creator)) {
       return null;
     }
 
-    const creator = this.props.users[this.props.group.creator_id];
+    const creator = this.props.creator;
     let button;
 
-    if (this.props.currentUser.id === this.props.group.creator_id) {
+    if ((this.props.currentUser) && (this.props.currentUser.id === this.props.group.creator_id)) {
       button = <Link to={`/groups/${this.props.group.id}/manage`}>Manage</Link>;
     } else {
       button = 'Join Group';

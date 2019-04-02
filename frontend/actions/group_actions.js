@@ -11,10 +11,11 @@ export const receiveGroups = groups => {
   }; 
 };
 
-export const receiveGroup = group => {
+export const receiveGroup = ({group, user}) => {
   return {
     type: RECEIVE_GROUP,
-    group
+    group,
+    user
   };
 };
 

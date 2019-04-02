@@ -1,3 +1,1 @@
-if user
-  json.extract! user, :id, :name
-end
+json.extract! user, :id, :name

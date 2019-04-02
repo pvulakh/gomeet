@@ -1,0 +1,12 @@
+@import '../colors.scss';
+@import '../fonts.scss';
+
+.group-index-your-groups > ul > div > img {
+  height: 228px;
+  width: auto;
+}
+
+.group-index-your-groups > ul {
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,4 +1,3 @@
-if @user
-  json.partial! "api/users/user", user: @user
-  json.extract! @user, :bio, :lat, :lng
-end
+json.partial! "api/users/user", user: @user
+json.extract! @user, :bio, :lat, :lng
+
