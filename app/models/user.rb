@@ -21,6 +21,11 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token 
 
     has_one_attached :photo
+    has_many :memberships
+
+    has_many :group_memberships,
+        through: :memberships,
+        source: :group
 
     has_many :groups,
         foreign_key: :creator_id,

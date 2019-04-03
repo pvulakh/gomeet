@@ -4,6 +4,11 @@ Rails.application.routes.draw do
     resources :users, only: [ :create, :show ] #:show, :update when finishing users
     resource :session, only: [ :create, :destroy ]
     resources :groups, only: [ :index, :create, :show, :update, :destroy ]
+    
+    resources :groups do
+      resources :memberships, only: [ :create ]
+      resource :memberships, only: [ :destroy ]
+    end
   end 
 
   root to: "static_pages#root"

@@ -8,6 +8,7 @@ export default (state = {}, action) => {
       return action.groups;
     case RECEIVE_GROUP:
       return merge({}, state, {[action.group.id]: action.group});
+      //memberships?????? how/where/is it automatic? test tomorrow
     case REMOVE_GROUP:
       const newState = merge({}, state);
       delete newState[action.groupId];

@@ -8,3 +8,7 @@ json.user do
       json.photo url_for(@group.creator.photo)
     end
 end
+
+
+
+

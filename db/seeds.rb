@@ -183,3 +183,51 @@ group6.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filenam
 group7.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filename:'owl-hat.jpg')
 group8.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filename:'owl-hat.jpg')
 group9.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filename:'owl-hat.jpg')
+
+
+Membership.create!(
+    user_id: demo_user,
+    group_id: group1
+)
+
+Membership.create!(
+    user_id: user3,
+    group_id: group1
+)
+
+Membership.create!(
+    user_id: user4,
+    group_id: group1
+)
+
+
+
+Membership.create!(
+    user_id: demo_user,
+    group_id: group2
+)
+
+Membership.create!(
+    user_id: user2,
+    group_id: group2
+)
+
+Membership.create!(
+    user_id: user3,
+    group_id: group2
+)
+
+Membership.create!(
+    user_id: user5,
+    group_id: group2
+)
+
+
+Membership.create!(
+    user_id: demo_user,
+    group_id: group4
+)
+Membership.create!(
+    user_id: user6,
+    group_id: group4
+)
