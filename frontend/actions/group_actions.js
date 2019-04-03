@@ -12,11 +12,12 @@ export const receiveGroups = groups => {
   }; 
 };
 
-export const receiveGroup = ({group, user}) => {
+export const receiveGroup = ({group, user, current_user}) => {
   return {
     type: RECEIVE_GROUP,
     group,
-    user
+    user,
+    current_user
   };
 };
 
@@ -48,8 +49,6 @@ export const deleteGroup = groupId => dispatch => (
   GroupApiUtil.deleteGroup(groupId).then(() => dispatch(removeGroup(groupId)))
 );
 
-
-//membership actions
 export const createMembership = groupId => dispatch => {
   return MembershipApiUtil.createMembership(groupId).then(group => dispatch(receiveGroup(group)));
 };

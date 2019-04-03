@@ -4,12 +4,24 @@ import { Link } from 'react-router-dom';
 class GroupShow extends React.Component {
   componentDidMount() {
     this.props.fetchGroup(this.props.match.params.groupId);
+    this.joinGroup = this.joinGroup.bind(this);
+    this.leaveGroup = this.leaveGroup.bind(this);
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.group.id != this.props.group.id) {
       this.props.fetchGroup(this.props.match.params.groupId);
     }
+  }
+
+  joinGroup(e) {
+    e.preventDefault();
+    this.props.joinGroup(this.props.group.id);
+  }
+
+  leaveGroup(e) {
+    e.preventDefault();
+    this.props.leaveGroup(this.props.group.id);
   }
 
   render() {
@@ -22,8 +34,12 @@ class GroupShow extends React.Component {
 
     if ((this.props.currentUser) && (this.props.currentUser.id === this.props.group.creator_id)) {
       button = <Link to={`/groups/${this.props.group.id}/manage`} className='group-show-button'>Manage</Link>;
+    } else if ((this.props.currentUser) && (!this.props.group.members.includes(this.props.currentUser.id))) {
+      button = <button onClick={this.joinGroup}>Join this group</button>;
+    } else if (this.props.currentUser) {
+      button = <button onClick={this.leaveGroup}>Leave this group</button>;
     } else {
-      button = <Link to={'/'} className='group-show-button'>Join this group</Link>;
+      button = <Link to='/login' className='group-show-button'>Join this group</Link>;
     }
 
     let photo;
@@ -64,7 +80,8 @@ class GroupShow extends React.Component {
               <div>Events</div>
             </div>
             <div>
-              <button>{button}</button> 
+              {/* <button>{button}</button>  */}
+              {button}
             </div>
           </div>
         <div className='group-show-bottom'>

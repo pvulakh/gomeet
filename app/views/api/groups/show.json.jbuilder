@@ -9,6 +9,11 @@ json.user do
     end
 end
 
+json.current_user do 
+  json.extract! current_user, :id
+  json.group_memberships current_user.group_membership_ids
+end
+
 
 
 
