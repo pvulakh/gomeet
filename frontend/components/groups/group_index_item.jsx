@@ -14,6 +14,7 @@ const GroupIndexItem = props => {
                 <h3>{props.group.title}</h3>
                 <p>{memberCount} Members</p>
             </Link>
+            <div className='gradient'></div>
             {photo}
         </div>  
     ); 

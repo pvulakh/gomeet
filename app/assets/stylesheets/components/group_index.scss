@@ -10,13 +10,21 @@
 .group-index-your-groups > ul > div > img {
   width: 228px;
   height: auto;
+  opacity: 1.0;
 }
 
 .group-index-your-groups > ul > div {
   overflow: hidden;
-  background-image: linear-gradient(to bottom right, red, blue);
-  opacity: 0.6;
+}
+
+.gradient {
+  background: linear-gradient(to bottom, $white, black);
+  opacity: 0.4;
   z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
 }
 
 .group-index-header {
@@ -72,7 +80,7 @@
 }
 
 .group-title {
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   top: 40%;
   left: 15%;
