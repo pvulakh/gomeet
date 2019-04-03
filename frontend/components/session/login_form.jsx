@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Redirect, Route, Link } from 'react-router-dom';
 import { merge } from 'lodash';
 
 class LoginForm extends React.Component {
@@ -11,6 +11,7 @@ class LoginForm extends React.Component {
         };
         this.verifySubmit = this.verifySubmit.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoUser = this.demoUser.bind(this);
     }
     
     handleChange(field) {
@@ -40,9 +41,13 @@ class LoginForm extends React.Component {
     }
 
     handleSubmit() {
-        this.props.login(this.state.user);
+        this.props.login(this.state.user).then(() => this.props.history.push('/find/gomeets'));
     }
     
+    demoUser() {
+        this.props.demoUser().then(() => this.props.history.push('/find/gomeets'));
+    }
+
     render() {
         let sorry;
         let error;
@@ -74,7 +79,7 @@ class LoginForm extends React.Component {
         return (
             <div className='form-page'>
                 <Route
-                    path="/"
+                    path="/login"
                     render={
                         () => {
                             if (this.props.currentUser) {
@@ -110,7 +115,7 @@ class LoginForm extends React.Component {
                         <div className='or-box'>
                             <div className='or-word'>or</div>
                         </div>
-                        <button onClick={this.props.demoUser} className="demo-button">Log in with Demo User</button>
+                        <button onClick={this.demoUser} className="demo-button">Log in with Demo User</button>
                     </div>
                 </div>
             </div>

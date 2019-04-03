@@ -1,3 +1,5 @@
+require 'faker'
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -11,7 +13,7 @@ Group.destroy_all
 Membership.destroy_all 
 
 demo_user = User.create!(
-    name: 'Demo User',
+    name: 'Demo User', 
     password: 'demo_user',
     email: 'demo_user@gomeet.com',
     session_token: SecureRandom.urlsafe_base64(16),

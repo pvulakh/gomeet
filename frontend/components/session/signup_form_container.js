@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { signup, demoUser  } from '../../actions/session_actions';
 import SignupForm from './signup_form';
+import { withRouter } from 'react-router-dom';
 
 const msp = state => {
     return {
@@ -17,4 +18,4 @@ const mdp = dispatch => {
     };
 };
 
-export default connect(msp, mdp)(SignupForm);
+export default withRouter(connect(msp, mdp)(SignupForm));

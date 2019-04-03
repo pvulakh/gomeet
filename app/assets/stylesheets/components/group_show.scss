@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 3px solid $light-mid-grey;
+  border-top: 2px solid $light-mid-grey;
   color: $dark-grey-blue;
 }
 
@@ -14,7 +14,6 @@
   height: 357px;
   width: 100%;
   overflow: hidden;
-  border-bottom: 1px solid $light-mid-grey;
   padding-left: 60px;
   padding-right: 60px;
   justify-content: center;
@@ -53,14 +52,19 @@
 
 .group-show-stripe {
   display: flex;
-  margin: 19px 19px;
+  margin: 16px 0px 0px 0px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   width: 100%;
   justify-content: space-around;
+  border-top: 1px solid $less-light-mid-grey;
+  padding-top: 8px;
 }
 
 .group-show-stripe > div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 16px;
 }
 
@@ -94,6 +98,10 @@
   max-width: 600px;
 }
 
+.group-show-description > h2 {
+  padding-top: 8px;
+}
+
 .group-show-events-header {
   display: flex;
   justify-content: space-between;
@@ -121,5 +129,6 @@
   display: flex;
   justify-content: flex-start;
   padding-left: 0px;
+  padding-bottom: 32px;
 }
 

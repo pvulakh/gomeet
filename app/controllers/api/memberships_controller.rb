@@ -1,6 +1,5 @@
 class Api::MembershipsController < ApplicationController
   def create
-    #debugger
     @membership = Membership.new
     @membership.user_id = current_user.id
     @group = Group.find(params[:group_id]) 
@@ -13,7 +12,6 @@ class Api::MembershipsController < ApplicationController
   end 
 
   def destroy 
-    #debugger
     membership = current_user.memberships.find_by(group_id: params[:group_id])
     @group = Group.find(params[:group_id])
     membership.delete

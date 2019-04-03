@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect, Route, Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Splash = props => {
@@ -8,6 +8,16 @@ const Splash = props => {
 
     return (
     <div className={`splash ${hidden}`}>
+        <Route
+            path="/"
+            render={
+                () => {
+                    if (props.currentUser) {
+                        return < Redirect to="/find/gomeets" />
+                    }
+                }
+            }
+        />
         <div className='splash-vid'>
             <video muted autoPlay loop><source src="https://www.meetup.com/mu_static/en-US/video.dddafbfe.mp4" /></video>
             <div className='vid-text'>
@@ -60,4 +70,4 @@ const msp = state => {
         currentUser: state.entities.users[state.session.id]
     }
 }
-export default connect(msp, null)(Splash);
+export default withRouter(connect(msp, null)(Splash));

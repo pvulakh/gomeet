@@ -11,6 +11,7 @@ class SignupForm extends React.Component {
         };
         this.verifySubmit = this.verifySubmit.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoUser = this.demoUser.bind(this);
     }
 
     handleChange(field) {
@@ -68,7 +69,11 @@ class SignupForm extends React.Component {
 
 
     handleSubmit() {
-        this.props.signup(this.state.user);
+        this.props.signup(this.state.user).then(() => this.props.history.push('/find/gomeets'));
+    }
+    
+    demoUser() {
+        this.props.demoUser().then(() => this.props.history.push('/find/gomeets'));
     }
 
     render() {
@@ -104,11 +109,10 @@ class SignupForm extends React.Component {
         let invalidPass;
         if (this.state.errorFields.password) invalidPass = 'invalid';
 
-        //debugger
         return (
             <div className='signup-page'>
                 <Route
-                    path="/"
+                    path="/signup"
                     render={
                         () => {
                             if (this.props.currentUser) {
@@ -121,7 +125,7 @@ class SignupForm extends React.Component {
                 
                 <h2>Sign up</h2>
                 <div className='demo'>
-                    <button onClick={this.props.demoUser} className="demo-button">Log in with Demo User</button>
+                    <button onClick={this.demoUser} className="demo-button">Log in with Demo User</button>
                 </div>
 
                 <form onSubmit={this.verifySubmit} className='signup-form'>

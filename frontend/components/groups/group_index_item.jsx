@@ -6,9 +6,14 @@ const GroupIndexItem = props => {
     if (props.group.photo) {
         photo = <img src={props.group.photo}/>;
     }
+
+    const memberCount = props.group.members.length;
     return (
         <div className='grid-item'>
-            <Link to={`/groups/${props.group.id}`} className='group-title'><h3>{props.group.title}</h3></Link>
+            <Link to={`/groups/${props.group.id}`} className='group-title'>
+                <h3>{props.group.title}</h3>
+                <p>{memberCount} Members</p>
+            </Link>
             {photo}
         </div>  
     ); 
