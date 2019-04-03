@@ -108,11 +108,18 @@
   align-items: center;
 }
 
-.group-org > div > div > img {
+.avatar {
   background-color: $white;
   border-radius: 50%;
   height: 60px;
   width: auto;
   overflow: hidden;
+}
+
+.group-show-members > div > ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 0px;
 }
 

@@ -1,6 +1,10 @@
 members = []
+member_avatars = []
 group.members.each do |member|
   members.push(member.id)
+  if member.photo.attached?
+    member_avatars.push(url_for(member.photo)) 
+  end 
 end 
 
 json.extract! group, :id, :creator_id, :title, :description, :public, :lat, :lng, :created_at
@@ -9,3 +13,4 @@ json.extract! group, :id, :creator_id, :title, :description, :public, :lat, :lng
   end
   
 json.members members
+json.member_avatars member_avatars

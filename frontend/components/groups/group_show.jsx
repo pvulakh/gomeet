@@ -35,9 +35,9 @@ class GroupShow extends React.Component {
     if ((this.props.currentUser) && (this.props.currentUser.id === this.props.group.creator_id)) {
       button = <Link to={`/groups/${this.props.group.id}/manage`} className='group-show-button'>Manage</Link>;
     } else if ((this.props.currentUser) && (!this.props.group.members.includes(this.props.currentUser.id))) {
-      button = <button onClick={this.joinGroup}>Join this group</button>;
+      button = <button onClick={this.joinGroup} className='group-show-button'>Join this group</button>;
     } else if (this.props.currentUser) {
-      button = <button onClick={this.leaveGroup}>Leave this group</button>;
+      button = <button onClick={this.leaveGroup} className='group-show-button'>Leave this group</button>;
     } else {
       button = <Link to='/login' className='group-show-button'>Join this group</Link>;
     }
@@ -49,8 +49,11 @@ class GroupShow extends React.Component {
 
     let avatar;
     if (creator && creator.photo) {
-      avatar = <img src={creator.photo} />
+      avatar = <img src={creator.photo} className='avatar'/>
     }
+    
+    const memberCount = this.props.group.members.length;
+    const memberAvatars = this.props.group.member_avatars.map((avatar, idx) => <li key={idx}><img src={avatar} className='avatar'/></li>);
 
     return (
       <div className='group-show-page'>
@@ -66,11 +69,11 @@ class GroupShow extends React.Component {
             </div>
             <div>
               <i className="fas fa-user-friends"></i>
-              <div>[] members</div>
+              <div>{memberCount} members</div>
             </div>
             <div>
               <i className="fas fa-user-alt"></i>
-              <div>Organized by <div>{ creator.name}</div></div>
+              <div>Organized by {creator.name}</div>
             </div>
           </div>
         </div>
@@ -80,7 +83,6 @@ class GroupShow extends React.Component {
               <div>Events</div>
             </div>
             <div>
-              {/* <button>{button}</button>  */}
               {button}
             </div>
           </div>
@@ -113,7 +115,7 @@ class GroupShow extends React.Component {
             <div className='group-show-members'>
               <h3>Members</h3>
               <div>
-                member avatars will go here
+                <ul>{memberAvatars}</ul>
               </div>
             </div>
           </div>

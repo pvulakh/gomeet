@@ -10,6 +10,7 @@ export default (state = {}, action) => {
     case RECEIVE_GROUP:
       newState = merge({}, state, {[action.group.id]: action.group});
       newState[action.group.id].members = action.group.members;
+      newState[action.group.id].member_avatars = action.group.member_avatars;
       return newState;
     case REMOVE_GROUP:
       newState = merge({}, state);
