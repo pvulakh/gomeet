@@ -71,13 +71,21 @@
 
 .group-show-stripe {
   display: flex;
+  justify-content: center;
+}
+
+.group-show-stripe > div {
+// .group-show-stripe {
+  display: flex;
   padding-top: 12px;
   padding-bottom: 12px;
   justify-content: center;
   padding-top: 8px;
+  width: 1100px;
 }
 
-.group-show-stripe > div {
+.group-show-stripe > div > div {
+// .group-show-stripe > div {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -86,7 +94,7 @@
 
 .about-events {
   width: 600px;
-  padding-left: 68px;
+  padding-left: 50px;
 }
 
 .about-tab {
@@ -110,7 +118,7 @@
 
 .membership-button-div {
   width: 452px;
-  padding-left: 13px;
+  padding-left: 100px;
 }
 
 .group-show-right {
@@ -119,6 +127,7 @@
 
 .group-show-left {
   width: 452px;
+  padding-left: 30px;
 }
 
 .group-show-button {
@@ -135,7 +144,13 @@
   background-color: $light-grey;
 }
 
-.group-show-bottom > div * {
+.group-show-bottom > div {
+  display: flex;
+  width: 1100px;
+}
+
+.group-show-bottom > div > div * {
+// .group-show-bottom > div * {
   padding-left: 16px;
 }
 
