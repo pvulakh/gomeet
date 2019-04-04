@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import GSEventsIndexItem from './gs_events_index_item';
 
 
 class GroupShow extends React.Component {
@@ -54,15 +55,15 @@ class GroupShow extends React.Component {
     }
     
     const memberCount = this.props.group.members.length;
+    const memberGrammar = memberCount === 1 ? 'member' : 'members';
     const memberAvatars = this.props.group.member_avatars.map((avatar, idx) => <li key={idx}><img src={avatar} className='avatar'/></li>);
     const events = this.props.group.events.map(eventId => {
       const event = this.props.events[eventId];
       return (
-        <li key={eventId}>
-          <div>{event.start_time}</div>
-          <div>{event.name}</div>
-          <div>{event.description}</div>
-        </li>
+        <GSEventsIndexItem
+          key={event.id}
+          event={event}
+          />
       );
     });
 
@@ -80,7 +81,7 @@ class GroupShow extends React.Component {
             </div>
             <div>
               <i className="fas fa-user-friends"></i>
-              <div>{memberCount} members</div>
+              <div>{memberCount} {memberGrammar}</div>
             </div>
             <div>
               <i className="fas fa-user-alt"></i>
@@ -111,7 +112,7 @@ class GroupShow extends React.Component {
                     <button>See all</button>
                   </div>
                   <div>
-                    <ul>{events}</ul>
+                    <ul id='events-ul'>{events}</ul>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 require 'date'
+require 'open-uri'
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -23,7 +24,7 @@ demo_user = User.create!(
 )
 
 user2 = User.create!(
-    name: 'Name2 Name2',
+    name: 'Owl One',
     password: 'starwars',
     email: 'user2@gomeet.com',
     session_token: SecureRandom.urlsafe_base64(16),
@@ -32,7 +33,7 @@ user2 = User.create!(
 )
 
 user3 = User.create!(
-    name: 'Name3 Name3',
+    name: 'Owl Two',
     password: 'starwars',
     email: 'user3@gomeet.com',
     session_token: SecureRandom.urlsafe_base64(16),
@@ -41,7 +42,7 @@ user3 = User.create!(
 )
 
 user4 = User.create!(
-    name: 'Name4 Name4',
+    name: 'Owl Three',
     password: 'starwars',
     email: 'user4@gomeet.com',
     session_token: SecureRandom.urlsafe_base64(16),
@@ -50,7 +51,7 @@ user4 = User.create!(
 )
 
 user5 = User.create!(
-    name: 'Name5 Name5',
+    name: 'Owl Four',
     password: 'starwars',
     email: 'user5@gomeet.com',
     session_token: SecureRandom.urlsafe_base64(16),
@@ -59,7 +60,7 @@ user5 = User.create!(
 )
 
 user6 = User.create!(
-    name: 'Name6 Name6',
+    name: 'Owl Five',
     password: 'starwars',
     email: 'user6@gomeet.com',
     session_token: SecureRandom.urlsafe_base64(16),
@@ -140,23 +141,34 @@ group9 = Group.create!(
     creator_id: user6.id
 )
 
-demo_user.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filename:'owl-hat.jpg')
-user2.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filename:'owl-hat.jpg')
-user3.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filename:'owl-hat.jpg')
-user4.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filename:'owl-hat.jpg')
-user5.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filename:'owl-hat.jpg')
-user6.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filename:'owl-hat.jpg')
+demo_user.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/owl-hat.jpg'), filename:'owl-hat.jpg')
+user2.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/owl-hat+copy.jpg'), filename:'owl-hat copy.jpg')
+user3.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/owl-hat+copy+2.jpg'), filename:'owl-hat copy 2.jpg')
+user4.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/owl-hat+copy+3.jpg'), filename:'owl-hat copy 3.jpg')
+user5.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/owl-hat+copy+4.jpg'), filename:'owl-hat copy 4.jpg')
+user6.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/owl-hat+copy+5.jpg'), filename:'owl-hat copy 5.jpg')
 
-group1.photo.attach(io: File.open('app/assets/images/seed/laptop-people-1.jpg'), filename:'laptop-people-1.jpg')
-group2.photo.attach(io: File.open('app/assets/images/seed/book-club-1.jpg'), filename:'book-club-1.jpg')
-group3.photo.attach(io: File.open('app/assets/images/seed/busking-1.jpg'), filename:'busking-1.jpg')
-group4.photo.attach(io: File.open('app/assets/images/seed/hiking-group-1.jpg'), filename:'hiking-group-1.jpg')
-group5.photo.attach(io: File.open('app/assets/images/seed/laptop-people-2.jpg'), filename:'laptop-people-2.jpg')
-group6.photo.attach(io: File.open('app/assets/images/seed/hiking-group-2.jpg'), filename:'hiking-group-2.jpg')
-group7.photo.attach(io: File.open('app/assets/images/seed/nature-painting-1.jpg'), filename:'nature-painting-1.jpg')
-group8.photo.attach(io: File.open('app/assets/images/seed/mushroom-foraging-1.jpg'), filename:'mushroom-foraging-1.jpg')
-group9.photo.attach(io: File.open('app/assets/images/seed/paintbrush-person-1.jpg'), filename:'paintbrush-person-1.jpg')
+# user2.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/frida-bredesen-314303-unsplash.jpg'), filename:'frida-bredesen-314303-unsplash.jpg')
+# user3.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/christian-taylor-385813-unsplash.jpg'), filename:'christian-taylor-385813-unsplash.jpg')
+# user4.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/gary-bendig-185238-unsplash.jpg'), filename:'gary-bendig-185238-unsplash.jpg')
+# user5.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/james-carol-lee-744769-unsplash.jpg'), filename:'james-carol-lee-744769-unsplash.jpg')
+# user6.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/steve-harvey-1135107-unsplash.jpg'), filename:'steve-harvey-1135107-unsplash.jpg')
 
+group1.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/laptop-people-1.jpg'), filename:'laptop-people-1.jpg')
+group2.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/book-club-1.jpg'), filename:'book-club-1.jpg')
+group3.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/busking-1.jpg'), filename:'busking-1.jpg')
+group4.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/hiking-group-1.jpg'), filename:'hiking-group-1.jpg')
+group5.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/laptop-people-2.jpg'), filename:'laptop-people-2.jpg')
+group6.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/hiking-group-2.jpg'), filename:'hiking-group-2.jpg')
+group7.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/nature-painting-1.jpg'), filename:'nature-painting-1.jpg')
+group8.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/mushroom-foraging-1.jpg'), filename:'mushroom-foraging-1.jpg')
+group9.photo.attach(io: open('https://s3.amazonaws.com/gomeet-seed/paintbrush-person-1.jpg'), filename:'paintbrush-person-1.jpg')
+
+#group1 memberships
+Membership.create!(
+    user_id: user2.id,
+    group_id: group1.id
+)
 
 Membership.create!(
     user_id: demo_user.id,
@@ -174,7 +186,7 @@ Membership.create!(
 )
 
 
-
+#group2 memberships
 Membership.create!(
     user_id: demo_user.id,
     group_id: group2.id
@@ -196,6 +208,12 @@ Membership.create!(
 )
 
 
+#group4 memberships
+Membership.create!(
+    user_id: user4.id,
+    group_id: group4.id
+)
+
 Membership.create!(
     user_id: demo_user.id,
     group_id: group4.id
@@ -203,6 +221,37 @@ Membership.create!(
 Membership.create!(
     user_id: user6.id,
     group_id: group4.id
+)
+
+#remaining group creator memberships
+Membership.create!(
+    user_id: group3.creator_id,
+    group_id: group3.id 
+)
+
+Membership.create!(
+    user_id: group5.creator_id,
+    group_id: group5.id 
+)
+
+Membership.create!(
+    user_id: group6.creator_id,
+    group_id: group6.id 
+)
+
+Membership.create!(
+    user_id: group7.creator_id,
+    group_id: group7.id 
+)
+
+Membership.create!(
+    user_id: group8.creator_id,
+    group_id: group8.id
+)
+
+Membership.create!(
+    user_id: group9.creator_id,
+    group_id: group9.id
 )
 
 start = DateTime.new(2019, 4, 28, 6, 30)

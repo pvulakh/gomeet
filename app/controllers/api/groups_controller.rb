@@ -8,6 +8,8 @@ class Api::GroupsController < ApplicationController
     @group = Group.new(group_params)
     @group.creator_id = current_user.id
     if @group.save
+      membership = Membership.new(user_id: current_user.id, group_id: @group.id);
+      membership.save 
       render :show
     else  
       render json: @group.errors.full_messages, status: 401

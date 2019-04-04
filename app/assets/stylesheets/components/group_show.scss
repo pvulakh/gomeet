@@ -97,6 +97,17 @@
   padding-left: 50px;
 }
 
+#events-ul {
+  list-style: none;
+  padding-right: 16px;
+  padding-bottom: 40px;
+  padding-left: 0;
+}
+
+#events-ul * {
+  padding-left: 0;
+}
+
 .membership-button-div {
   width: 452px;
   padding-left: 13px;
@@ -139,6 +150,11 @@
 .group-show-events-header {
   display: flex;
   justify-content: space-between;
+  padding-right: 16px;
+}
+
+.group-show-events {
+  padding-right: 16px;
 }
 
 .group-show-events-header > h3 {
@@ -165,4 +181,41 @@
   padding-left: 0px;
   padding-bottom: 32px;
 }
+
+#events-item {
+  background-color: $white;
+  border-radius: 7px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+#events-item:hover {
+  box-shadow: 1px 1px 10px 1px $mid-grey;
+}
+
+#events-item > .events-loc {
+  display: flex;
+  color: $mid-grey;
+  font-weight: 300;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+#events-item > .events-loc > i {
+  color: $mid-grey;
+  padding-right: 10px;
+}
+
+#events-item > div:first-of-type {
+  color: $bright-blue;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.event-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
 

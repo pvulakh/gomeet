@@ -8,11 +8,12 @@ const GroupIndexItem = props => {
     }
 
     const memberCount = props.group.members.length;
+    const memberGrammar = memberCount === 1 ? 'Member' : 'Members';
     return (
         <div className='grid-item'>
             <Link to={`/groups/${props.group.id}`} className='group-title'>
                 <h3>{props.group.title}</h3>
-                <p>{memberCount} Members</p>
+                <p>{memberCount} {memberGrammar}</p>
             </Link>
             <div className='gradient'></div>
             {photo}
