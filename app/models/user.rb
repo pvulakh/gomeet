@@ -31,6 +31,11 @@ class User < ApplicationRecord
         foreign_key: :creator_id,
         primary_key: :id,
         class_name: 'Group'
+
+    has_many :events,
+        foreign_key: :host_id,
+        primary_key: :id,
+        class_name: 'Event'
     
     attr_reader :password 
     

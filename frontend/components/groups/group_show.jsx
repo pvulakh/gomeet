@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 class GroupShow extends React.Component {
   componentDidMount() {
     this.props.fetchGroup(this.props.match.params.groupId);
@@ -54,6 +55,16 @@ class GroupShow extends React.Component {
     
     const memberCount = this.props.group.members.length;
     const memberAvatars = this.props.group.member_avatars.map((avatar, idx) => <li key={idx}><img src={avatar} className='avatar'/></li>);
+    const events = this.props.group.events.map(eventId => {
+      const event = this.props.events[eventId];
+      return (
+        <li key={eventId}>
+          <div>{event.start_time}</div>
+          <div>{event.name}</div>
+          <div>{event.description}</div>
+        </li>
+      );
+    });
 
     return (
       <div className='group-show-page'>
@@ -99,7 +110,7 @@ class GroupShow extends React.Component {
                   <button>See all</button>
                 </div>
                 <div>
-                  events will go here
+                  <ul>{events}</ul>
                 </div>
               </div>
             </div>

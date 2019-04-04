@@ -6,10 +6,13 @@ const msp = (state, ownProps) => {
   const group = state.entities.groups[ownProps.match.params.groupId] || {};
   const currentUser = state.entities.users[state.session.id];
   const creator = state.entities.users[group.creator_id];
+  const events = state.entities.events;
+  
   return {
     group,
     currentUser,
-    creator
+    creator,
+    events
   };
 };
 

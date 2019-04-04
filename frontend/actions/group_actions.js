@@ -1,5 +1,5 @@
 import * as GroupApiUtil from '../util/group_api_util';
-import * as MembershipApiUtil from '../util/membership_util';
+import * as MembershipApiUtil from '../util/membership_api_util';
 
 export const RECEIVE_GROUPS = "RECEIVE_GROUPS";
 export const RECEIVE_GROUP = "RECEIVE_GROUP";
@@ -12,12 +12,13 @@ export const receiveGroups = groups => {
   }; 
 };
 
-export const receiveGroup = ({group, user, current_user}) => {
+export const receiveGroup = ({group, user, current_user, events}) => {
   return {
     type: RECEIVE_GROUP,
     group,
     user,
-    current_user
+    current_user,
+    events
   };
 };
 

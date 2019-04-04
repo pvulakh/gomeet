@@ -1,4 +1,4 @@
-require 'faker'
+require 'date'
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -11,6 +11,7 @@ require 'faker'
 User.destroy_all
 Group.destroy_all
 Membership.destroy_all 
+Event.destroy_all
 
 demo_user = User.create!(
     name: 'Demo User', 
@@ -18,9 +19,7 @@ demo_user = User.create!(
     email: 'demo_user@gomeet.com',
     session_token: SecureRandom.urlsafe_base64(16),
     lat: 42.0,
-    lng: 43.0,
-    created_at: 'T0',
-    updated_at: 'T1'
+    lng: 43.0
 )
 
 user2 = User.create!(
@@ -29,9 +28,7 @@ user2 = User.create!(
     email: 'user2@gomeet.com',
     session_token: SecureRandom.urlsafe_base64(16),
     lat: 42.0,
-    lng: 43.0,
-    created_at: 'T0',
-    updated_at: 'T1'
+    lng: 43.0
 )
 
 user3 = User.create!(
@@ -40,9 +37,7 @@ user3 = User.create!(
     email: 'user3@gomeet.com',
     session_token: SecureRandom.urlsafe_base64(16),
     lat: 42.0,
-    lng: 43.0,
-    created_at: 'T0',
-    updated_at: 'T1'
+    lng: 43.0
 )
 
 user4 = User.create!(
@@ -51,9 +46,7 @@ user4 = User.create!(
     email: 'user4@gomeet.com',
     session_token: SecureRandom.urlsafe_base64(16),
     lat: 42.0,
-    lng: 43.0,
-    created_at: 'T0',
-    updated_at: 'T1'
+    lng: 43.0
 )
 
 user5 = User.create!(
@@ -62,9 +55,7 @@ user5 = User.create!(
     email: 'user5@gomeet.com',
     session_token: SecureRandom.urlsafe_base64(16),
     lat: 42.0,
-    lng: 43.0,
-    created_at: 'T0',
-    updated_at: 'T1'
+    lng: 43.0
 )
 
 user6 = User.create!(
@@ -73,9 +64,7 @@ user6 = User.create!(
     email: 'user6@gomeet.com',
     session_token: SecureRandom.urlsafe_base64(16),
     lat: 42.0,
-    lng: 43.0,
-    created_at: 'T0',
-    updated_at: 'T1'
+    lng: 43.0
 )
 
 
@@ -84,9 +73,7 @@ group1 = Group.create!(
     description: 'Group1 Description',
     lat: 42.0,
     lng: 43.0,
-    creator_id: user2.id,
-    created_at: 'T0',
-    updated_at: 'T1'
+    creator_id: user2.id
 )
 
 group2 = Group.create!(
@@ -94,9 +81,7 @@ group2 = Group.create!(
     description: 'Group2 Description Description',
     lat: 42.0,
     lng: 43.0,
-    creator_id: user3.id,
-    created_at: 'T0',
-    updated_at: 'T1'
+    creator_id: user3.id
 )
 
 group3 = Group.create!(
@@ -104,9 +89,7 @@ group3 = Group.create!(
     description: 'Group3 Description Description',
     lat: 42.0,
     lng: 43.0,
-    creator_id: user4.id,
-    created_at: 'T0',
-    updated_at: 'T1'
+    creator_id: user4.id
 )
 
 group4 = Group.create!(
@@ -114,9 +97,7 @@ group4 = Group.create!(
     description: 'Group4 Description Description',
     lat: 42.0,
     lng: 43.0,
-    creator_id: user4.id,
-    created_at: 'T0',
-    updated_at: 'T1'
+    creator_id: user4.id
 )
 
 group5 = Group.create!(
@@ -124,9 +105,7 @@ group5 = Group.create!(
     description: 'Group5 Description Description',
     lat: 42.0,
     lng: 43.0,
-    creator_id: user5.id,
-    created_at: 'T0',
-    updated_at: 'T1'
+    creator_id: user5.id
 )
 
 group6 = Group.create!(
@@ -134,9 +113,7 @@ group6 = Group.create!(
     description: 'Group6 Description Description',
     lat: 42.0,
     lng: 43.0,
-    creator_id: user6.id,
-    created_at: 'T0',
-    updated_at: 'T1'
+    creator_id: user6.id
 )
 
 group7 = Group.create!(
@@ -144,9 +121,7 @@ group7 = Group.create!(
     description: 'Group7 Description Description',
     lat: 42.0,
     lng: 43.0,
-    creator_id: user6.id,
-    created_at: 'T0',
-    updated_at: 'T1'
+    creator_id: user6.id
 )
 
 group8 = Group.create!(
@@ -154,9 +129,7 @@ group8 = Group.create!(
     description: 'Group8 Description Description',
     lat: 42.0,
     lng: 43.0,
-    creator_id: user6.id,
-    created_at: 'T0',
-    updated_at: 'T1'
+    creator_id: user6.id
 )
 
 group9 = Group.create!(
@@ -164,9 +137,7 @@ group9 = Group.create!(
     description: 'Group9 Description Description',
     lat: 42.0,
     lng: 43.0,
-    creator_id: user6.id,
-    created_at: 'T0',
-    updated_at: 'T1'
+    creator_id: user6.id
 )
 
 demo_user.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filename:'owl-hat.jpg')
@@ -232,4 +203,51 @@ Membership.create!(
 Membership.create!(
     user_id: user6.id,
     group_id: group4.id
+)
+
+start = DateTime.new(2019, 4, 28, 6, 30)
+finish = DateTime.new(2019, 4, 28, 9, 0)
+
+event1 = Event.create(
+    host_id: demo_user.id,
+    group_id: group1.id,
+    name: 'Event 1',
+    description: 'description description description description description description description description description description description',
+    lat: 42.0,
+    lng: 43.0,
+    start_time: start,
+    end_time: finish
+)
+
+event2 = Event.create(
+    host_id: demo_user.id,
+    group_id: group1.id,
+    name: 'Event 2',
+    description: 'description description description description description description description description description description description',
+    lat: 42.0,
+    lng: 43.0,
+    start_time: start,
+    end_time: finish
+)
+
+event3 = Event.create(
+    host_id: demo_user.id,
+    group_id: group1.id,
+    name: 'Event 3',
+    description: 'description description description description description description description description description description description',
+    lat: 42.0,
+    lng: 43.0,
+    start_time: start,
+    end_time: finish
+)
+
+event4 = Event.create(
+    host_id: demo_user.id,
+    group_id: group1.id,
+    name: 'Event 4',
+    description: 'description description description description description description description description description description description',
+    lat: 42.0,
+    lng: 43.0,
+    start_time: start,
+    end_time: finish
 )

@@ -11,4 +11,6 @@ class Group < ApplicationRecord
     foreign_key: :creator_id,
     primary_key: :id,
     class_name: 'User'
+
+  has_many :events
 end

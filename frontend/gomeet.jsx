@@ -5,7 +5,7 @@ import configureStore from './store/store';
 // import { logout } from './actions/session_actions';
 // import { fetchGroups, fetchGroup, createGroup, updateGroup, deleteGroup } from './actions/group_actions';
 // import { createMembership, deleteMembership } from './actions/group_actions';
-
+import { fetchGroupEvents, fetchAllEvents, fetchEvent, createEvent, updateEvent, deleteEvent } from './actions/event_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -30,13 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // window.signup = signup;
     // window.logout = logout;
 
-    // window.getState = store.getState;
-    // window.dispatch = store.dispatch;
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
 
-    // window.fetchGroups = fetchGroups;
-    // window.fetchGroup = fetchGroup;
-    // window.createGroup = createGroup;
-    // window.updateGroup = updateGroup;
+    window.fetchGroupEvents = fetchGroupEvents;
+    window.fetchAllEvents = fetchAllEvents;
+    window.fetchEvent = fetchEvent;
+    window.createEvent = createEvent;
+    window.updateEvent = updateEvent;
+    window.deleteEvent = deleteEvent;
 
     // window.createMembership = createMembership;
     // window.deleteMembership = deleteMembership;
