@@ -8,8 +8,8 @@
 }
 
 .group-index-your-groups > ul > div > img {
-  width: 228px;
-  height: auto;
+  width: auto;
+  height: 180px;
   opacity: 1.0;
 }
 
@@ -82,8 +82,8 @@
 .group-title {
   z-index: 2;
   position: absolute;
-  top: 40%;
-  left: 15%;
+  bottom: 10%;
+  left: 10%;
   color: $white;
   font-size: 20px;
   -webkit-text-stroke: 1px $light-grey;
@@ -92,6 +92,7 @@
 .group-title > h3 {
   font-weight: 400;
   margin-bottom: 0px;
+  line-height: 1;
 }
 
 .group-title > p {

@@ -147,15 +147,15 @@ user4.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filename
 user5.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filename:'owl-hat.jpg')
 user6.photo.attach(io: File.open('app/assets/images/seed/owl-hat.jpg'), filename:'owl-hat.jpg')
 
-group1.photo.attach(io: File.open('app/assets/images/seed/laptop-people-1.jpg'), filename:'owl-hat.jpg')
-group2.photo.attach(io: File.open('app/assets/images/seed/book-club-1.jpg'), filename:'owl-hat.jpg')
-group3.photo.attach(io: File.open('app/assets/images/seed/busking-1.jpg'), filename:'owl-hat.jpg')
-group4.photo.attach(io: File.open('app/assets/images/seed/hiking-group-1.jpg'), filename:'owl-hat.jpg')
-group5.photo.attach(io: File.open('app/assets/images/seed/laptop-people-2.jpg'), filename:'owl-hat.jpg')
-group6.photo.attach(io: File.open('app/assets/images/seed/hiking-group-2.jpg'), filename:'owl-hat.jpg')
-group7.photo.attach(io: File.open('app/assets/images/seed/nature-painting-1.jpg'), filename:'owl-hat.jpg')
-group8.photo.attach(io: File.open('app/assets/images/seed/mushroom-foraging-1.jpg'), filename:'owl-hat.jpg')
-group9.photo.attach(io: File.open('app/assets/images/seed/paintbrush-person-1.jpg'), filename:'owl-hat.jpg')
+group1.photo.attach(io: File.open('app/assets/images/seed/laptop-people-1.jpg'), filename:'laptop-people-1.jpg')
+group2.photo.attach(io: File.open('app/assets/images/seed/book-club-1.jpg'), filename:'book-club-1.jpg')
+group3.photo.attach(io: File.open('app/assets/images/seed/busking-1.jpg'), filename:'busking-1.jpg')
+group4.photo.attach(io: File.open('app/assets/images/seed/hiking-group-1.jpg'), filename:'hiking-group-1.jpg')
+group5.photo.attach(io: File.open('app/assets/images/seed/laptop-people-2.jpg'), filename:'laptop-people-2.jpg')
+group6.photo.attach(io: File.open('app/assets/images/seed/hiking-group-2.jpg'), filename:'hiking-group-2.jpg')
+group7.photo.attach(io: File.open('app/assets/images/seed/nature-painting-1.jpg'), filename:'nature-painting-1.jpg')
+group8.photo.attach(io: File.open('app/assets/images/seed/mushroom-foraging-1.jpg'), filename:'mushroom-foraging-1.jpg')
+group9.photo.attach(io: File.open('app/assets/images/seed/paintbrush-person-1.jpg'), filename:'paintbrush-person-1.jpg')
 
 
 Membership.create!(
