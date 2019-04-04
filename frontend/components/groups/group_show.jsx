@@ -45,7 +45,7 @@ class GroupShow extends React.Component {
 
     let photo;
     if (this.props.group && this.props.group.photo) {
-      photo = <img src={this.props.group.photo} />
+      photo = <div id='group-photo-wrapper'><img src={this.props.group.photo} /></div>;
     }
 
     let avatar;
@@ -88,45 +88,47 @@ class GroupShow extends React.Component {
             </div>
           </div>
         </div>
+        <div className='stripe-and-main'>
           <div className='group-show-stripe'>
             <div className='about-events'>
-              <div>About</div>
-              <div>Events</div>
+              <div className='about-tab'>About</div>
+              <div className='events-tab'>Events</div>
             </div>
-            <div>
+            <div className='membership-button-div'>
               {button}
             </div>
           </div>
-        <div className='group-show-bottom'>
-          <div className='group-show-right'>
-            <div className='group-show-main'>
-              <div className='group-show-description'>
-                <h2>What we're about</h2>
-                <div>{this.props.group.description}</div>
-              </div>
-              <div className='group-show-events-'>
-                <div className='group-show-events-header'>
-                  <h3>Upcoming events</h3>
-                  <button>See all</button>
+          <div className='group-show-bottom'>
+            <div className='group-show-right'>
+              <div className='group-show-main'>
+                <div className='group-show-description'>
+                  <h2>What we're about</h2>
+                  <div>{this.props.group.description}</div>
                 </div>
+                <div className='group-show-events-'>
+                  <div className='group-show-events-header'>
+                    <h3>Upcoming events</h3>
+                    <button>See all</button>
+                  </div>
+                  <div>
+                    <ul>{events}</ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='group-show-left'>
+              <div className='group-org'>
+                <h3>Organizer</h3>
                 <div>
-                  <ul>{events}</ul>
+                  <div>{avatar}</div>
+                  <div>{creator.name}</div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className='group-show-left'>
-            <div className='group-org'>
-              <h3>Organizer</h3>
-              <div>
-                <div>{avatar}</div>
-                <div>{creator.name}</div>
-              </div>
-            </div>
-            <div className='group-show-members'>
-              <h3>Members</h3>
-              <div>
-                <ul>{memberAvatars}</ul>
+              <div className='group-show-members'>
+                <h3>Members</h3>
+                <div>
+                  <ul>{memberAvatars}</ul>
+                </div>
               </div>
             </div>
           </div>
