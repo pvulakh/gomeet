@@ -42,7 +42,7 @@ class EditGroupForm extends React.Component {
       formData.append('group[photo]', this.state.photoFile);
     }
 
-    this.props.action(formData).then(() => this.props.history.push('/find/gomeets'));
+    this.props.action(formData).then(() => this.props.history.push(`/groups/${formData.get('group[id]')}`));
   }
 
   handleFile(e) {
