@@ -1,24 +1,21 @@
-# README
+# GoMeet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+GoMeet is a clone of Meetup, a service used to organize online groups that host in-person events for people with similar interests. Users can join groups in their area or create their own to connect with folks who share their interests.
 
-Things you may want to cover:
+![Splash page](./app/assets/images/readme/splash.png)
 
-* Ruby version
+## Features
 
-* System dependencies
+Users can create groups, join groups, and add events in groups they created. Certain functionalities of the site are only available to authorized users. 
 
-* Configuration
+![Splash page](./app/assets/images/readme/group_index.png)
 
-* Database creation
+### Groups
 
-* Database initialization
+Users can create groups and join/leave groups they are not creators of. There is an associated membership joins table on the backend that reflects folks joining and leaving groups while using the site. The main group page lists the group's members and associated events. 
 
-* How to run the test suite
+![Splash page](./app/assets/images/readme/group_show.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+### Events
 
-* Deployment instructions
-
-* ...
+Coming soon!
