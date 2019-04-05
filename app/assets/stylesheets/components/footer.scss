@@ -43,6 +43,7 @@
 
 .footer-item {
     display: flex;
+    flex-direction: column;
 }
 
 .footer-item * {
@@ -69,7 +70,7 @@
 }
 
 h4 {
-    margin: 0px 0px 20px;
+    margin: 0px 0px 5px;
 }
 
 .footer-flex {
