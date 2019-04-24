@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter, Route, Redirect } from 'react-router-dom';
-//use moment.js and react datepicker
+import moment from 'moment';
+import timezone from 'moment-timezone';
+import DatePicker from 'react-datepicker';
 
 class CreateEventForm extends React.Component {
   constructor(props) {
@@ -10,6 +12,7 @@ class CreateEventForm extends React.Component {
     }
   
   componentDidMount() {
+    // debugger
     if (!this.props.groupTitle) {
       this.props.fetchGroup(groupId);
     }
@@ -26,12 +29,14 @@ class CreateEventForm extends React.Component {
   }
 
   render() {
+    // debugger
     if (!this.props.groupTitle) {
       return;
     }
     
     return (
       <div className='schedule-page'>
+        <h1>create event form will go here</h1>
           <Route
             path="/schedule"
             render={
@@ -42,6 +47,7 @@ class CreateEventForm extends React.Component {
               }
             }
           />
+          <h2>{moment().format("MMM Do YY")}</h2>
         </div>
     );
   }
