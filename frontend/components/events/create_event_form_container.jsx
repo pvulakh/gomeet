@@ -13,8 +13,9 @@ const msp = (state, ownProps) => {
       lng: 43.0
     };
   const groupId = ownProps.match.params.groupId 
-  const groupTitle = this.state.groups[groupId].title
-
+  debugger
+  const groupTitle = state.entities.groups[groupId].title
+  
   return {
     event,
     currentUser: state.entities.users[state.session.id],
