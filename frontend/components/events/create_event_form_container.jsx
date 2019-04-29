@@ -12,10 +12,13 @@ const msp = (state, ownProps) => {
       lat: 42.0,
       lng: 43.0
     };
-  const groupId = ownProps.match.params.groupId 
-  debugger
-  const groupTitle = state.entities.groups[groupId].title
-  
+    
+  const groupId = ownProps.match.params.groupId
+  let groupTitle;
+  if (state.entities.groups[groupId]) {
+    groupTitle = state.entities.groups[groupId].title
+  }
+
   return {
     event,
     currentUser: state.entities.users[state.session.id],
