@@ -75,7 +75,7 @@ class LoginForm extends React.Component {
                 {this.state.emptyFields.password}
             </div>
         )
-
+        // debugger
         return (
             <div className='form-page'>
                 <Route
@@ -98,7 +98,7 @@ class LoginForm extends React.Component {
                             <Link to='/register' className='form-link' onClick={() => this.setState({ emptyFields: {} })}> Sign up</Link></p> 
                         </div>
                     </div>
-
+                    
                     <form onSubmit={this.verifySubmit} className='form'>
 
                     <label>Email address:</label>

@@ -6,14 +6,12 @@ import DatePicker from 'react-datepicker';
 
 class CreateEventForm extends React.Component {
   constructor(props) {
-    debugger
     super(props);
     this.state = this.props.event;
     this.handleSubmit = this.handleSubmit.bind(this);
     }
   
   componentDidMount() {
-    debugger
     if (!this.props.groupTitle) {
       this.props.fetchGroup(this.props.groupId);
     }
@@ -30,7 +28,6 @@ class CreateEventForm extends React.Component {
   }
 
   render() {
-    debugger
     if (!this.props.groupTitle) {
       return null;
     }
@@ -54,9 +51,17 @@ class CreateEventForm extends React.Component {
         </section>
 
         <form className='create-event-form' onSubmit={this.handleSubmit}>
-          <label className='create-event-title'>
-            <input type="text" value={this.state.title} onChange={this.handleChange('title')}/>
-          </label>
+        <div className='create-event-title-container'>
+          <label className='create-event-title'>Title<p>(required)</p></label>
+          <input type="text" value={this.state.title} onChange={this.handleChange('title')}/>
+        </div> 
+        <div className='create-event-dt-container'>
+          <label className='create-event-dt'>Date and time</label>
+          <DatePicker
+            selected={this.state.startDate}
+            onChange={this.handleChange}
+          />
+        </div>
         </form>
         
           <h2>{moment().format("MMM Do YY")}</h2>
