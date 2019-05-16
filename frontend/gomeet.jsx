@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
+// require("react-datepicker/dist/react-datepicker-cssmodules.css");
+
+
 // import { logout } from './actions/session_actions';
 // import { fetchGroups, fetchGroup, createGroup, updateGroup, deleteGroup } from './actions/group_actions';
 // import { createMembership, deleteMembership } from './actions/group_actions';
