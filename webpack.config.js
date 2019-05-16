@@ -19,10 +19,18 @@ module.exports = {
                     }
                 },
             }
+            // { // added this
+            //   test: /\.css$/,
+            //   use: ["style-loader", "css-loader"]
+            // }
         ]
     },
     devtool: 'eval-source-map',
     resolve: {
         extensions: [".js", ".jsx", "*"]
+        // modules: [ // added this
+        //   path.resolve(__dirname, "./src"),
+        //   path.resolve(__dirname, "./node_modules")
+        // ]
     }
 };

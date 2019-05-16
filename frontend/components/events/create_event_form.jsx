@@ -4,6 +4,9 @@ import moment from 'moment';
 import timezone from 'moment-timezone';
 import DatePicker from 'react-datepicker';
 
+// import "react-datepicker/dist/react-datepicker.scss"; // errors out
+// require("react-datepicker/dist/react-datepicker-cssmodules.css");
+
 class CreateEventForm extends React.Component {
   constructor(props) {
     super(props);
@@ -58,6 +61,7 @@ class CreateEventForm extends React.Component {
         <div className='create-event-dt-container'>
           <label className='create-event-dt'>Date and time</label>
           <DatePicker
+            className='date-pick'
             selected={this.state.startDate}
             onChange={this.handleChange}
           />
