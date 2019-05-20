@@ -4,13 +4,11 @@ import moment from 'moment';
 import timezone from 'moment-timezone';
 import DatePicker from 'react-datepicker';
 
-// import "react-datepicker/dist/react-datepicker.scss"; // errors out
-// require("react-datepicker/dist/react-datepicker-cssmodules.css");
-
 class CreateEventForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.event;
+    this.setState({ date: '' });
     this.handleSubmit = this.handleSubmit.bind(this);
     }
   
@@ -26,6 +24,11 @@ class CreateEventForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    // create formData obj and put this.state into its respective properties
+
+    // use this.state.startDate/this.state.startTime to create the actual dateTime objects that we'll want to push into db
+    // for formData.append('event[startTime]') and fromData.append('event['endTime'])
+
     this.props.createEvent(this.props.groupId, this.state).then(() => this.props.history.push(`/${this.props.groupId}`));;
     // history.push to events show page once built out; for now, goes to group show
   }
@@ -56,14 +59,14 @@ class CreateEventForm extends React.Component {
         <form className='create-event-form' onSubmit={this.handleSubmit}>
         <div className='create-event-title-container'>
           <label className='create-event-title'>Title<p>(required)</p></label>
-          <input type="text" value={this.state.title} onChange={this.handleChange('title')}/>
+          <input type="text" value={this.state.name} onChange={this.handleChange('name')}/>
         </div> 
         <div className='create-event-dt-container'>
           <label className='create-event-dt'>Date and time</label>
           <DatePicker
             className='date-pick'
-            selected={this.state.startDate}
-            onChange={this.handleChange}
+            selected={this.state.date}
+            onChange={this.handleChange('date')}
           />
         </div>
         </form>
