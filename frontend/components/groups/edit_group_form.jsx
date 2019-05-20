@@ -27,7 +27,7 @@ class EditGroupForm extends React.Component {
   handleChange(field) {
     return e => this.setState({ [field]: e.target.value });
   }
-
+ 
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
