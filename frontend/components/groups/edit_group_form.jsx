@@ -84,8 +84,8 @@ class EditGroupForm extends React.Component {
 
           <div className='update-group-title'>
             <label>GoMeet Group name</label>
-              {/* <input type="text" value={this.state.title} onChange={this.handleChange('title')}/> */}
-              <input type="text" value='I AM TESTING WHETHER MY CHANGES SHOW UP' onChange={this.handleChange('title')}/>
+              <input type="text" value={this.state.title} onChange={this.handleChange('title')}/>
+              {/* <input type="text" value='I AM TESTING WHETHER MY CHANGES SHOW UP' onChange={this.handleChange('title')}/> */}
           </div>
 
           <div className='update-group-description'>
