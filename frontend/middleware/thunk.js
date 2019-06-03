@@ -1,6 +1,6 @@
 export const thunk = ({ dispatch, getState }) => next => action => {
-    if (typeof action === 'function') {
-        return action(dispatch, getState);
+    if (typeof action === 'function') { // means our action is async
+        return action(dispatch, getState); // invoke async action with dispatch
     }
-    return next(action);
+    return next(action); // pass action to our next middleware
 };
