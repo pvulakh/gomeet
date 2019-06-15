@@ -7,6 +7,7 @@ import DatePicker from 'react-datepicker';
 class CreateEventForm extends React.Component {
   constructor(props) {
     super(props);
+    // description, lat, lng, startTime, endTime, 
     this.state = this.props.event;
     this.setState({ date: '' });
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,7 +20,10 @@ class CreateEventForm extends React.Component {
   }
 
   handleChange(field) {
-    return e => this.setState({[field]: e.target.value});
+    return e => {
+      debugger
+      return this.setState({[field]: e.target.value});
+    }
   }
 
   handleSubmit(e) {
@@ -49,7 +53,7 @@ class CreateEventForm extends React.Component {
               }
             }
           }
-        />
+        /> 
 
         <section>
           <span>Create an event</span>

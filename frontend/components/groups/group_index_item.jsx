@@ -21,4 +21,4 @@ const GroupIndexItem = props => {
     ); 
 }
 
-export default GroupIndexItem;
+export default GroupIndexItem; 
