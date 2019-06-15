@@ -5,6 +5,7 @@ import GSEventsIndexItem from './gs_events_index_item';
 
 class GroupShow extends React.Component {
   componentDidMount() {
+    debugger
     this.props.fetchGroup(this.props.match.params.groupId);
     this.joinGroup = this.joinGroup.bind(this);
     this.leaveGroup = this.leaveGroup.bind(this);

@@ -15,7 +15,7 @@ const msp = (state, ownProps) => {
     events
   };
 };
-
+ 
 const mdp = dispatch => {
   return {
     fetchGroup: id => dispatch(fetchGroup(id)),

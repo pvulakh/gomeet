@@ -1,6 +1,6 @@
 class Api::GroupsController < ApplicationController
   def index
-    @groups = Group.all
+    @groups = Group.all.includes(:events, :members).with_attached_photo
     render :index
   end 
   
@@ -21,7 +21,7 @@ class Api::GroupsController < ApplicationController
   end 
 
   def update
-    @group = Group.find(params[:id])
+    @group = Group.find(params[:id]).includes(:events, :members).with_attached_photo
     if (@group.creator_id == current_user.id) && @group.update(group_params)
       render :show
     else  
