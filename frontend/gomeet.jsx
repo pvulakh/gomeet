@@ -9,6 +9,7 @@ import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
+    // test test test
     
     let store;
 

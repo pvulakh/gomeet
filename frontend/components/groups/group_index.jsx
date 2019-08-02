@@ -17,9 +17,9 @@ class GroupIndex extends React.Component {
           <div className='group-index-header'>
             <h2>Find your next event</h2>
             <div>
-              <div>[] events in your groups</div>
+              <div>12 events in your groups</div>
               <div className='dot'><i className="fas fa-circle"></i></div>
-              <div>[] events near you</div>
+              <div>38 events near you</div>
             </div>
           </div>
         <div className='group-index-your-groups'>
