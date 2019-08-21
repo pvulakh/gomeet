@@ -11,8 +11,15 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    
+    start_date = params[:event][:startDate].split(' ')[0..3].join(' ')
+    end_date = params[:event][:endDate].split(' ')[0..3].join(' ')
+    @event.start_time = DateTime.parse(start_date + " #{params[:event][:startTime]}")
+    @event.end_time = DateTime.parse(start_date + " #{params[:event][:endTime]}")
+  
     @event.host_id = current_user.id 
     @event.group_id = params[:group_id]
+
     if @event.save
       render :show
     else  
@@ -42,6 +49,6 @@ class Api::EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name, :start_time, :end_time, :description, :lat, :lng)
+    params.require(:event).permit(:name, :description, :lat, :lng)
   end   
-end
+end 

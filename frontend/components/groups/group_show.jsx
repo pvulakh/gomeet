@@ -5,15 +5,16 @@ import GSEventsIndexItem from './gs_events_index_item';
 
 class GroupShow extends React.Component {
   componentDidMount() {
-    debugger
+    // debugger
     this.props.fetchGroup(this.props.match.params.groupId);
+    this.props.fetchGroupEvents(this.props.match.params.groupId);
     this.joinGroup = this.joinGroup.bind(this);
     this.leaveGroup = this.leaveGroup.bind(this);
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.group.id != this.props.group.id) {
-      this.props.fetchGroup(this.props.match.params.groupId);
+      this.props.fetchGroup(this.props.match.params.groupId).then(() => this.props.fetchGroupEvents(this.props.match.params.groupId));
     }
   }
 
@@ -60,6 +61,10 @@ class GroupShow extends React.Component {
     const memberAvatars = this.props.group.member_avatars.map((avatar, idx) => <li key={idx}><img src={avatar} className='avatar'/></li>);
     const events = this.props.group.events.map(eventId => {
       const event = this.props.events[eventId];
+      // debugger
+      if (!event) {
+        return null;
+      }
       return (
         <GSEventsIndexItem
           key={event.id}

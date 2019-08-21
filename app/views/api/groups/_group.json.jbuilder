@@ -20,4 +20,4 @@ json.extract! group, :id, :creator_id, :title, :description, :public, :lat, :lng
 json.members group.member_ids
 json.member_avatars member_avatars
 json.events group.event_ids
- 
+  

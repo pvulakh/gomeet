@@ -21,8 +21,9 @@ json.events do
     json.set! event.id do 
       json.extract! event, :id, :name, :description, :lat, :lng
       s = event.start_time
-      json.start_time [s.strftime("%a"), "#{s.strftime("%b")} #{s.strftime("%d")}", "#{s.strftime("%R")[1..-1]} PM" ].join(', ') 
+      json.start_time [s.strftime("%a"), "#{s.strftime("%b")} #{s.strftime("%d")}", "#{s.strftime("%R")[0..-1]} PM" ].join(', ') 
     end
   end 
 end 
 
+ 
