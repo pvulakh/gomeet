@@ -9,6 +9,7 @@ class CreateEventForm extends React.Component {
     super(props);
     // description, lat, lng, startTime, endTime, 
     this.state = this.props.event;
+    this.verifySubmit = this.verifySubmit.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleEndTime = this.handleEndTime.bind(this);
   }
@@ -33,12 +34,22 @@ class CreateEventForm extends React.Component {
   }
 
   handleEndTime(e) {
-    debugger
+    // debugger
     return e.target.selectedIndex === 4 ? this.setState({ endDate: this.state.startDate }) : this.handleChange('endTime');
   }
 
-  handleSubmit(e) {
+  verifySubmit(e) {
     e.preventDefault();
+    if (!this.state.endDate) {
+      debugger
+      // this.setState({endDate: this.state.startDate,})
+    }
+
+    this.handleSubmit();
+  }
+
+  handleSubmit() {
+    // e.preventDefault();
     // create formData obj and put this.state into its respective properties
 
     // use this.state.startDate/this.state.startTime to create the actual dateTime objects that we'll want to push into db
@@ -96,7 +107,7 @@ class CreateEventForm extends React.Component {
           <p>{this.props.groupTitle}</p>
         </section>
 
-        <form className='create-event-form' onSubmit={this.handleSubmit}>
+        <form className='create-event-form' onSubmit={this.verifySubmit}>
           <div className='create-event-title-container'>
             <label className='create-event-title'>Title<p>(required)</p></label>
             <input type="text" value={this.state.name} onChange={this.handleChange('name')}/>
