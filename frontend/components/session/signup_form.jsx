@@ -28,7 +28,6 @@ class SignupForm extends React.Component {
 
     componentDidUpdate(prevProps) {
         if ((prevProps.errors != this.props.errors) && (this.props.errors[0][0] === "Email has already been taken")) {
-            debugger
             const emailTakenError = (
                 <div>
                     This email is already in use. Would you rather 

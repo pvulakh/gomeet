@@ -20,7 +20,6 @@ export const fetchEvent = (groupId, id) => {
 };
 
 export const createEvent = (groupId, event) => {  
-  debugger
   return $.ajax({
     method: 'POST',
     url: `api/groups/${groupId}/events`,
