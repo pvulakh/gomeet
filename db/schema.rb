@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_01_134615) do
+ActiveRecord::Schema.define(version: 2019_10_03_154324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 2019_04_01_134615) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "dms", force: :cascade do |t|
+    t.integer "dmee_id"
+    t.integer "dmer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dmer_id", "dmee_id"], name: "index_dms_on_dmer_id_and_dmee_id", unique: true
   end
 
   create_table "events", force: :cascade do |t|
@@ -74,6 +82,14 @@ ActiveRecord::Schema.define(version: 2019_04_01_134615) do
     t.index ["group_id"], name: "index_memberships_on_group_id"
     t.index ["user_id", "group_id"], name: "index_memberships_on_user_id_and_group_id", unique: true
     t.index ["user_id"], name: "index_memberships_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "body"
+    t.integer "author_id"
+    t.integer "dm_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rsvps", force: :cascade do |t|

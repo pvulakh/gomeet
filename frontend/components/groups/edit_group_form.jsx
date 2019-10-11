@@ -31,6 +31,7 @@ class EditGroupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
+    
     formData.append('group[id]', this.state.id);
     formData.append('group[title]', this.state.title);
     formData.append('group[description]', this.state.description);

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resource :session, only: [ :create, :destroy ]
     resources :groups, only: [ :index, :create, :show, :update, :destroy ]
     resources :events, only: [ :index ]
-    
+    resource :dms, only: [ :create, :show]
+    resource :messages, only: [ :create, :update, :destroy]
+
     resources :groups do
       resources :memberships, only: [ :create ]
       resource :memberships, only: [ :destroy ]
